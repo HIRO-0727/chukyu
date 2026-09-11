@@ -1,1 +1,65 @@
-/*# sourceMappingURL=style.css.map */
+@charset "UTF-8";
+:root {
+  --color-main: #4D9600;
+  --color-text: #000;
+  --color-border:#55A500;
+  --color-background:rgba(#4d9600, 0.1);
+}
+
+/*---------------
+    base
+---------------*/
+html {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-text-size-adjust: 100%;
+  word-break: break-all;
+  font-size: 10px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: "Yu Mincho", "YuMincho", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  color: var(--color-text);
+  font-size: 1.6rem;
+  font-style: normal;
+  line-height: 1.5625;
+  letter-spacing: 0;
+}
+
+#container {
+  width: 100%;
+}
+
+/*---------------
+common
+---------------*/
+/* PC, SPの非表示 */
+@media (max-width: 767px) {
+  .pc {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) {
+  .sp {
+    display: none !important;
+  }
+}
+.main {
+  margin-top: 8rem;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.inner {
+  max-width: 920px;
+  margin: 0 auto;
+}/*# sourceMappingURL=style.css.map */
