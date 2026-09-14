@@ -306,6 +306,11 @@ MVセクション
   display: flex;
   z-index: 100;
 }
+@media (max-width: 767px) {
+  .mv__contents {
+    padding-top: 58.4vw;
+  }
+}
 
 .mv__catch {
   width: 100%;
@@ -313,6 +318,7 @@ MVセクション
 }
 .mv__catch h2 {
   font-size: 4rem;
+  font-weight: 600;
   color: #fff;
   line-height: 1.75;
   letter-spacing: 30%;
@@ -322,5 +328,101 @@ MVセクション
   .mv__catch h2 {
     font-size: 3rem;
     line-height: 2;
+  }
+}
+
+/*---------------
+ABOUTセクション
+---------------*/
+.about {
+  position: relative;
+}
+
+.about__image img {
+  aspect-ratio: 1080/500;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 767px) {
+  .about__image img {
+    aspect-ratio: 375/584;
+  }
+}
+
+.about__contents {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 10.1851851852vw;
+  padding-right: 40.5555555556vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  z-index: 100;
+}
+@media (max-width: 767px) {
+  .about__contents {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-right: 0;
+  }
+}
+
+.about__title,
+.about__desc {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+}
+.about__title h2,
+.about__desc h2 {
+  font-size: 3rem;
+  letter-spacing: 18%;
+  line-height: 1;
+}
+@media (max-width: 960px) {
+  .about__title h2,
+  .about__desc h2 {
+    font-size: 2.5rem;
+  }
+}
+.about__title p,
+.about__desc p {
+  font-size: 1.8rem;
+  letter-spacing: 37%;
+  line-height: 2.6666666667;
+  margin-right: 4.1666666667vw;
+}
+@media (max-width: 960px) {
+  .about__title p,
+  .about__desc p {
+    font-size: 1.6rem;
+    letter-spacing: 30%;
+    line-height: 2.25;
+  }
+}
+@media (max-width: 767px) {
+  .about__title p,
+  .about__desc p {
+    letter-spacing: 25%;
+    line-height: 1.625;
+    margin-top: 2.4rem;
+    margin-right: 0;
   }
 }/*# sourceMappingURL=style.css.map */

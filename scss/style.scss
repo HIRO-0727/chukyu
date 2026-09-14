@@ -285,7 +285,6 @@ MVセクション
     }
 }
 
-
 .mv__contents {
     width: 100%;
     height: 100%;
@@ -296,6 +295,10 @@ MVセクション
     background: rgba(#000, 0.15);
     display: flex;
     z-index: 100;
+
+    @media (max-width: 767px) {
+        padding-top: calc(219 / 375 * 100vw);
+    }
 }
 
 .mv__catch {
@@ -304,15 +307,98 @@ MVセクション
     
     h2 {
         font-size: 4rem;
+        font-weight: 600;
         color: #fff;
         line-height: calc(70 / 40);
         letter-spacing: 30%;
         text-align: center;
 
         @media (max-width: 767px) {
-        font-size: 3rem;
-        line-height: calc(60 / 30);
+            font-size: 3rem;
+            line-height: calc(60 / 30);
         } 
     }
 }
+
+/*---------------
+ABOUTセクション
+---------------*/
+.about {
+    position: relative;
+}
+
+.about__image img {
+    aspect-ratio: 1080 / 500;
+    object-fit: cover;
+
+    @media (max-width: 767px) {
+        aspect-ratio: 375 / 584;
+    }
+}
+
+.about__contents {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: {
+        top: calc(110 / 1080 * 100vw);
+        right: calc(438 / 1080 * 100vw);
+    }
+    display: flex;
+    flex-direction: row-reverse;
+    z-index: 100;
+
+    @media (max-width: 767px) {
+        // padding-top: calc(219 / 375 * 100vw);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: {
+            top: 5rem;
+            bottom: 5rem;
+            right: 0;
+        
+        }
+        
+    }
+}
+
+.about__title,
+.about__desc {
+    writing-mode: vertical-rl;
+
+    h2 {
+        font-size: 3rem;
+        letter-spacing: 18%;
+        line-height: 1;
+
+        @media (max-width: 960px) {
+            font-size: 2.5rem;
+        }
+
+    }
+
+    p {
+        font-size: 1.8rem;
+        letter-spacing: 37%;
+        line-height: calc(48 / 18);
+        margin-right: calc(45 / 1080 * 100vw);
+
+        @media (max-width: 960px) {
+            font-size: 1.6rem;
+            letter-spacing: 30%;
+            line-height: calc(36 / 16);
+        }
+
+        @media (max-width: 767px) {
+            letter-spacing: 25%;
+            line-height: calc(26 / 16);
+            margin-top: 2.4rem;
+            margin-right: 0;
+        }
+    }
+}
+
 
