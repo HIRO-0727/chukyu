@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>北村建設興業</title>
     <meta name="description" content="株式会社北村建設興業の公式サイトです。">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
     <meta name="robots" content="noindex">
@@ -48,10 +49,43 @@
                 </div>
             </div>
         </header>
-        <main class="main"></main>
+        <!-- メイン -->
+        <main class="main">
+            <!-- MVセクション -->
+            <div class="mv">
+                <div class="swiper infinite-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <picture>
+                                <source media="(min-width: 768px)" srcset="./img/fv1-pc.jpg">
+                                <img src="./img/fv1-sp.jpg" alt="永遠も瞬間もあなたと共に">
+                            </picture>
+                        </div>
+                        <div class="swiper-slide">
+                            <picture>
+                                <source media="(min-width: 768px)" srcset="./img/fv2-pc.jpg">
+                                <img src="./img/fv2-sp.jpg" alt="合掌造り">
+                            </picture>
+                        </div>
+                        <div class="swiper-slide">
+                            <picture>
+                                <source media="(min-width: 768px)" srcset="./img/fv3-pc.jpg">
+                                <img src="./img/fv3-sp.jpg" alt="永遠も瞬間もあなたと共に">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+                <div class="mv__contents">
+                    <div class="mv__catch">
+                        <h2>永遠も。<br class="sp">瞬間も。<br>あなたと共に。</h2>
+                    </div>
+                </div>
+            </div>
+        </main>
         <footer class="footer"></footer>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
