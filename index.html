@@ -8,12 +8,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/aos.css">
     <meta name="robots" content="noindex">
 </head>
 <body>
     <div id="container">
         <!-- ヘッダー -->
-        <header class="header">
+        <header 
+        class="header"
+        data-aos="header-bg"
+        data-aos-anchor="#about"
+        data-aos-anchor-placement="top-top"
+        >
             <div class="inner">
                 <h1 class="header__logo">
                     <a href="#">株式会社北村建設興業</a>
@@ -91,7 +97,7 @@
                     </picture>
                 </div>
                 <div class="inner">
-                    <div class="about__contents">
+                    <div class="about__contents" data-aos="fade-left">
                         <div class="about__title">
                             <h2>伝統とイマを繋ぐ</h2>
                         </div>
@@ -121,6 +127,65 @@
                             <p>サービス</p>
                         </div>
                     </div>
+                    <div class="service__contents">
+                        <div class="service__item1" data-aos="fade-up">
+                            <div class="service__image">
+                                <div class="service-pic">
+                                    <picture>
+                                        <source media="(min-width: 768px)" srcset="./img/service1-pc.jpg">
+                                        <img src="./img/service1-sp.jpg" alt="静岡県UI様自宅">
+                                    </picture>
+                                </div>
+                                <div class="pic-title1">
+                                    <p>静岡県U.I様自宅</p>
+                                </div>
+                            </div>
+                            <div class="service__textarea-1">
+                                <h3>新築<br class="pc1">（土地探し〜建築）</h3>
+                                <p>土地探しから建築、施工まで<br>
+                                    サポートいたします。<br>
+                                    風水的観点からもご提案。</p>
+                            </div>
+                        </div>
+                        <div class="service__item2" data-aos="fade-up">
+                            <div class="service__image">
+                                <div class="service-pic">
+                                    <picture>
+                                        <source media="(min-width: 768px)" srcset="./img/service2-pc.jpg">
+                                        <img src="./img/service2-sp.jpg" alt="北海道富良野市ブックカフェ">
+                                    </picture>
+                                </div>
+                                <div class="pic-title2">
+                                    <p>北海道富良野市ブックカフェ</p>
+                                </div>
+                            </div>
+                            <div class="service__textarea-2">
+                                <h3>リフォーム<br>リノベーション</h3>
+                                <p>温かみと雰囲気をそのままに<br>
+                                    住み心地、使い心地を<br>
+                                    追求しご提供いたします。</p>
+                            </div>
+                        </div>
+                        <div class="service__item3" data-aos="fade-up">
+                            <div class="service__image">
+                                <div class="service-pic">
+                                    <picture>
+                                        <source media="(min-width: 768px)" srcset="./img/service3-pc.jpg">
+                                        <img src="./img/service3-sp.jpg" alt="広島県竹原市">
+                                    </picture>
+                                </div>
+                                <div class="pic-title1">
+                                    <p>広島県竹原市</p>
+                                </div>
+                            </div>
+                            <div class="service__textarea-3">
+                                <h3>都市計画〜開発<br>公共施設</h3>
+                                <p>都市計画から都市開発まで<br>
+                                    ご提案いたします<br>
+                                    公共施設もさらに居心地良く</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
@@ -129,5 +194,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
 </body>
 </html>
