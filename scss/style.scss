@@ -541,13 +541,6 @@ SERVICEセクション
         width: 100%;
         height: auto;
         aspect-ratio: auto;
-        margin-left: 0;
-        padding: {
-            top: calc(20 / 375 * 100vw);
-            left: calc(20 / 375 * 100vw);
-            right: calc(20 / 375 * 100vw);
-            bottom: calc(12 / 375 * 100vw);
-        }
     }
 
     h3 {
@@ -562,10 +555,6 @@ SERVICEセクション
         font-weight: 600;
         line-height: calc(25 / 16);
         color: #fff;
-
-        @media (max-width: 767px) {
-            margin-top: calc(14 / 375 * 100vw);
-        }
     }
 
     &--1 {
@@ -612,5 +601,79 @@ SERVICEセクション
         @media (max-width: 930px) {
             padding-left: calc(150 / 768 * 100vw);
         }
+    }
+
+    @media (max-width: 767px) {
+            width: 100%;
+            height: auto;
+            aspect-ratio: auto;
+            margin: 0;
+            padding: {
+                top: calc(20 / 375 * 100vw);
+                left: calc(20 / 375 * 100vw);
+                right: calc(20 / 375 * 100vw);
+                bottom: calc(12 / 375 * 100vw);
+            }
+
+            h3 {
+                font-size: 2.5rem;
+                line-height: calc(33 / 25);
+            }
+
+            p {
+                margin-top: calc(14 / 375 * 100vw);
+            }
+    }
+}
+
+/*---------------
+WORKSセクション
+---------------*/
+.works {
+    position: relative;
+    padding-inline: 3rem;
+    padding: {
+        top: calc(80 / 1080 * 100vw);
+        bottom: calc(97 / 1080 * 100vw);
+    } 
+    @media (max-width: 767px) {
+        padding: {
+            top: 5rem;
+            bottom: 4.2rem;
+        } 
+    }
+}
+
+.works__contents {
+    margin-top: 6.8rem;
+    display: flex;
+    justify-content: space-between;
+    column-gap: calc(40 / 920 * 100%);
+
+    @media (max-width: 767px) {
+        flex-direction: column;
+        justify-content: flex-start;
+        row-gap: 2.2rem;
+    }
+}
+
+.works__image {
+    img {
+        aspect-ratio: 200 / 200;
+        object-fit: cover;
+    }
+
+    @media (max-width: 767px) {
+        width: 100%;
+        height: auto;
+        aspect-ratio:  315 / 250;
+    }
+}
+
+.works__desc {
+    margin-top: 1.9rem;
+
+    @media (max-width: 767px) {
+        margin-top: 0.9rem;
     }
 }

@@ -570,11 +570,6 @@ SERVICEセクション
     width: 100%;
     height: auto;
     aspect-ratio: auto;
-    margin-left: 0;
-    padding-top: 5.3333333333vw;
-    padding-left: 5.3333333333vw;
-    padding-right: 5.3333333333vw;
-    padding-bottom: 3.2vw;
   }
 }
 .service__textarea h3 {
@@ -589,11 +584,6 @@ SERVICEセクション
   font-weight: 600;
   line-height: 1.5625;
   color: #fff;
-}
-@media (max-width: 767px) {
-  .service__textarea p {
-    margin-top: 3.7333333333vw;
-  }
 }
 .service__textarea--1 {
   margin-left: -19.5652173913%;
@@ -630,5 +620,87 @@ SERVICEセクション
 @media (max-width: 930px) {
   .service__textarea--3 {
     padding-left: 19.53125vw;
+  }
+}
+@media (max-width: 767px) {
+  .service__textarea {
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    margin: 0;
+    padding-top: 5.3333333333vw;
+    padding-left: 5.3333333333vw;
+    padding-right: 5.3333333333vw;
+    padding-bottom: 3.2vw;
+  }
+  .service__textarea h3 {
+    font-size: 2.5rem;
+    line-height: 1.32;
+  }
+  .service__textarea p {
+    margin-top: 3.7333333333vw;
+  }
+}
+
+/*---------------
+WORKSセクション
+---------------*/
+.works {
+  position: relative;
+  padding-inline: 3rem;
+  padding-top: 7.4074074074vw;
+  padding-bottom: 8.9814814815vw;
+}
+@media (max-width: 767px) {
+  .works {
+    padding-top: 5rem;
+    padding-bottom: 4.2rem;
+  }
+}
+
+.works__contents {
+  margin-top: 6.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: 4.347826087%;
+     -moz-column-gap: 4.347826087%;
+          column-gap: 4.347826087%;
+}
+@media (max-width: 767px) {
+  .works__contents {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    row-gap: 2.2rem;
+  }
+}
+
+.works__image img {
+  aspect-ratio: 200/200;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 767px) {
+  .works__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 315/250;
+  }
+}
+
+.works__desc {
+  margin-top: 1.9rem;
+}
+@media (max-width: 767px) {
+  .works__desc {
+    margin-top: 0.9rem;
   }
 }/*# sourceMappingURL=style.css.map */
