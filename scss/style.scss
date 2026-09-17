@@ -109,6 +109,10 @@ img {
 
 }
 
+.colored-section {
+    background: $color-background;
+}
+
 /*---------------
 header
 ---------------*/
@@ -450,7 +454,6 @@ SERVICEセクション
 .service {
     position: relative;
     padding-inline: 3rem;
-    background: $color-background;
     padding: {
         top: calc(80 / 1080 * 100vw);
         bottom: calc(68 / 1080 * 100vw);
@@ -801,5 +804,120 @@ WORKS モーダル
             top: 0.7rem;
             left: 2rem;
         }
+    }
+}
+
+/*---------------
+NEWS お知らせセクション
+---------------*/
+.news {
+    padding: 8rem 3rem;
+
+    @media (max-width: 767px) {
+        padding: 5rem 3rem;
+    }
+}
+
+.news__contents {
+    margin-top: 6.8rem;
+    display: flex;
+    justify-content: space-between;
+    column-gap: calc(60 / 920 * 100%);
+
+    @media (max-width: 767px) {
+        margin-top: 3.8rem;
+    }
+}
+
+.news__item {
+    width: calc(430 / 920 * 100%);
+}
+
+.news__header {
+    width: 100%;
+    height: 5rem;
+    background: $color-main;
+    padding-left: calc(20 / 920 * 100%);
+    display: flex;
+    align-items: center;
+
+    h3 {
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: calc(33 / 20);
+        color: #fff;
+    }
+}
+
+.news__list {
+    li {
+        background: #fff;
+    }
+}
+
+.news__link {
+    display: grid;
+    grid-template-columns: 
+        5.7rem
+        minmax(0, 1fr);
+    column-gap: calc(65 / 430 * 100%);
+    padding-top: 2.3rem;
+    padding-bottom: 1.3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    transition: opacity 0.4s;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.news__date {
+    line-height: calc(33 / 16);
+}
+
+.news__desc {
+    font-size: 1.8rem;
+    line-height: calc(25 / 18);
+    margin-top: 0.7rem;
+}
+
+.news__link {
+    border-bottom: 0.1rem solid $color-border;
+}
+
+.news__footer {
+    padding: {
+        top: 2.3rem;
+        right: 2rem;
+        bottom: 2rem;
+        left: calc(330 / 430 * 100%);
+    }
+    background: #fff;
+}
+
+.more__module {
+    display: block;
+    position: relative;
+}
+
+.news__footer-text {
+    p {
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: calc(20 / 20);
+        color: #55A500;
+    }
+}
+
+.news__footer-icon {
+    position: absolute;
+    width: 8rem;
+    height: auto;
+    right: 0rem;
+    bottom: -1.1rem;
+
+    img {
+        aspect-ratio: 80 / 18;
     }
 }
