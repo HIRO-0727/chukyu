@@ -826,20 +826,27 @@ NEWS お知らせセクション
 
     @media (max-width: 767px) {
         margin-top: 3.8rem;
+        flex-direction: column;
+        row-gap: 5rem;
     }
 }
 
 .news__item {
     width: calc(430 / 920 * 100%);
+
+    @media (max-width: 767px) {
+        width: 100%;
+    }
 }
 
 .news__header {
     width: 100%;
     height: 5rem;
     background: $color-main;
-    padding-left: calc(20 / 920 * 100%);
+    padding-left: 2rem;
     display: flex;
     align-items: center;
+
 
     h3 {
         font-size: 2rem;
@@ -880,6 +887,15 @@ NEWS お知らせセクション
     font-size: 1.8rem;
     line-height: calc(25 / 18);
     margin-top: 0.7rem;
+    overflow: hidden;
+
+    //古いけど広く対応する行数制限
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
+    //最新の行数制限表記
+    line-clamp: 2;
 }
 
 .news__link {
@@ -887,11 +903,11 @@ NEWS お知らせセクション
 }
 
 .news__footer {
+    position: relative;
     padding: {
         top: 2.3rem;
         right: 2rem;
         bottom: 2rem;
-        left: calc(330 / 430 * 100%);
     }
     background: #fff;
 }
@@ -899,6 +915,16 @@ NEWS お知らせセクション
 .more__module {
     display: block;
     position: relative;
+    width: 8rem;
+    margin-left: auto;
+    transition: transform 0.3s;
+
+    @media (min-width: 768px) {
+        &:hover {
+            transform: translateX(1rem);
+        }
+    }
+
 }
 
 .news__footer-text {
