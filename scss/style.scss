@@ -710,12 +710,17 @@ WORKS モーダル
 .modal__contents {
     position: relative;
     display: none;
-    // display: flex;
     flex-direction: column;
     width: calc(450 / 1080 * 100vw);
     height: auto;
     aspect-ratio: 450 / 275;
     background: #fff;
+
+    @media (max-width: 767px) {
+        width: calc(100vw - 6rem);
+        max-width: 45rem;
+        aspect-ratio: 315 / 210;
+    }
 }
 
 .modal__contents.is-active {
@@ -774,11 +779,27 @@ WORKS モーダル
         height: 100%;
         object-fit: cover;
     }
+
+    @media (max-width: 767px) {
+        width: calc(100% - 4rem);
+        margin: {
+            top: 2rem;
+            right:2rem;
+            left:2rem;
+        }
+    }
 }
 
 .modal-desc {
     margin: {
         top: calc(9 / 450 * 100%);
         left: calc(15 / 450 * 100%);
+    }
+
+    @media (max-width: 767px) {
+        margin: {
+            top: 0.7rem;
+            left: 2rem;
+        }
     }
 }

@@ -755,6 +755,13 @@ WORKS モーダル
   aspect-ratio: 450/275;
   background: #fff;
 }
+@media (max-width: 767px) {
+  .modal__contents {
+    width: calc(100vw - 6rem);
+    max-width: 45rem;
+    aspect-ratio: 315/210;
+  }
+}
 
 .modal__contents.is-active {
   display: -webkit-box;
@@ -812,8 +819,22 @@ WORKS モーダル
   -o-object-fit: cover;
      object-fit: cover;
 }
+@media (max-width: 767px) {
+  .modal-pic {
+    width: calc(100% - 4rem);
+    margin-top: 2rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
+}
 
 .modal-desc {
   margin-top: 2%;
   margin-left: 3.3333333333%;
+}
+@media (max-width: 767px) {
+  .modal-desc {
+    margin-top: 0.7rem;
+    margin-left: 2rem;
+  }
 }/*# sourceMappingURL=style.css.map */
