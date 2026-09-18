@@ -947,3 +947,129 @@ NEWS お知らせセクション
         aspect-ratio: 80 / 18;
     }
 }
+
+/*---------------
+COMPANY 会社概要
+---------------*/
+
+.company {
+    position: relative;
+    padding-inline: 3rem;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+
+    @media (max-width: 767px) {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+}
+
+.company__contents {
+    margin-top: 6.8rem;
+    display: flex;
+    align-items: flex-end;
+
+    @media (max-width: 767px) {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+        margin-top: 3.8rem;
+    }
+}
+
+.company__info {
+    width: calc(500 /  920 * 100%);
+    height: auto;
+    aspect-ratio: 500 / 262;
+    flex-shrink: 0;
+    background: $color-main;
+    margin-left: calc(-180 / 920 * 100%);
+
+    @media (max-width: 850px) {
+        margin-left: calc(-140 / 920 * 100%);
+    }
+
+    @media (max-width: 767px) {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 315 / 202;
+        margin-left: 0;
+    }
+}
+
+.company-textarea {
+    padding-top: calc(49 / 500 * 100%);
+    padding-right: 2rem;
+    padding-left: calc(220 / 500 * 100%);
+    color: #fff;
+
+    @media (max-width: 850px) {
+        padding-top: calc(36 / 500 * 100%);
+        padding-left: calc(180 / 500 * 100%);
+    }
+
+    @media (max-width: 767px) {
+        padding-top: 1.9rem;
+        padding-right: 0;
+        padding-left: 2rem;
+    }
+}
+
+.company__map {
+    width: calc(600 / 920 * 100%);
+    height: auto;
+    flex-shrink: 0;
+    position: relative;
+    padding-bottom: calc(62 / 920 * 100%);
+
+    @media (max-width: 850px) {
+       width: calc(560 / 920 * 100%); 
+    }
+
+    iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 600 / 400;
+    }
+
+    
+
+    @media (max-width: 767px) {
+        width: 100%;
+        height: auto;
+        padding-bottom: 0;
+    }
+}
+
+.company-title h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: calc(33 / 20);
+}
+
+.address {
+    font-weight: 600;
+    margin-top: 0.7rem;
+}
+
+.tele {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 1.2rem;
+}
+
+.denwa {
+    font-weight: 600;
+}
+
+.number {
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: calc(25 / 25);
+}
+
+.mail {
+    display: flex;
+    font-weight: 600;
+    margin-top: calc(19 / 262 * 100%);
+}

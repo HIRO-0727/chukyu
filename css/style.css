@@ -986,4 +986,146 @@ NEWS お知らせセクション
 }
 .news__footer-icon img {
   aspect-ratio: 80/18;
+}
+
+/*---------------
+COMPANY 会社概要
+---------------*/
+.company {
+  position: relative;
+  padding-inline: 3rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+@media (max-width: 767px) {
+  .company {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+.company__contents {
+  margin-top: 6.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+@media (max-width: 767px) {
+  .company__contents {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    margin-top: 3.8rem;
+  }
+}
+
+.company__info {
+  width: 54.347826087%;
+  height: auto;
+  aspect-ratio: 500/262;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  background: #4D9600;
+  margin-left: -19.5652173913%;
+}
+@media (max-width: 850px) {
+  .company__info {
+    margin-left: -15.2173913043%;
+  }
+}
+@media (max-width: 767px) {
+  .company__info {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 315/202;
+    margin-left: 0;
+  }
+}
+
+.company-textarea {
+  padding-top: 9.8%;
+  padding-right: 2rem;
+  padding-left: 44%;
+  color: #fff;
+}
+@media (max-width: 850px) {
+  .company-textarea {
+    padding-top: 7.2%;
+    padding-left: 36%;
+  }
+}
+@media (max-width: 767px) {
+  .company-textarea {
+    padding-top: 1.9rem;
+    padding-right: 0;
+    padding-left: 2rem;
+  }
+}
+
+.company__map {
+  width: 65.2173913043%;
+  height: auto;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  position: relative;
+  padding-bottom: 6.7391304348%;
+}
+@media (max-width: 850px) {
+  .company__map {
+    width: 60.8695652174%;
+  }
+}
+.company__map iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 600/400;
+}
+@media (max-width: 767px) {
+  .company__map {
+    width: 100%;
+    height: auto;
+    padding-bottom: 0;
+  }
+}
+
+.company-title h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.65;
+}
+
+.address {
+  font-weight: 600;
+  margin-top: 0.7rem;
+}
+
+.tele {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-top: 1.2rem;
+}
+
+.denwa {
+  font-weight: 600;
+}
+
+.number {
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.mail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 600;
+  margin-top: 7.2519083969%;
 }/*# sourceMappingURL=style.css.map */
