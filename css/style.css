@@ -1128,4 +1128,358 @@ COMPANY 会社概要
   display: flex;
   font-weight: 600;
   margin-top: 7.2519083969%;
+}
+
+/*---------------
+CONTACT お問い合わせ
+---------------*/
+.contact {
+  padding: 8rem 3rem 8rem;
+}
+@media (max-width: 767px) {
+  .contact {
+    padding: 5rem 3rem;
+  }
+}
+
+.contact__contents {
+  margin-top: 3.5rem;
+  padding-inline: 6.5217391304%;
+}
+@media (max-width: 767px) {
+  .contact__contents {
+    padding-inline: 0;
+  }
+}
+
+.contact__desc {
+  font-size: 2rem;
+  line-height: 1.65;
+}
+
+.contact__form {
+  margin-top: 7rem;
+}
+@media (max-width: 767px) {
+  .contact__form {
+    margin-top: 4rem;
+  }
+}
+
+.form__item--1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 1rem;
+     -moz-column-gap: 1rem;
+          column-gap: 1rem;
+  height: 5rem;
+}
+.form__item--1:not(:first-of-type) {
+  margin-top: 5rem;
+}
+@media (max-width: 767px) {
+  .form__item--1 {
+    display: block;
+    row-gap: 3rem;
+  }
+  .form__item--1:not(:first-of-type) {
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .form__gender {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+.form__input,
+.form__select {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.form__item--2 {
+  display: grid;
+  row-gap: 1rem;
+  margin-top: 5rem;
+}
+
+.form__label {
+  font-size: 2rem;
+  line-height: 1.65;
+}
+.form__label--1 {
+  padding-top: 0.9rem;
+  width: 15.1rem;
+}
+
+input[type=text],
+input[type=email] {
+  background-color: #fff;
+  height: 5rem;
+  width: 100%;
+  padding-inline: 2rem;
+  font-size: 1.8rem;
+  line-height: 1.3888888889;
+}
+input[type=text]::-webkit-input-placeholder, input[type=email]::-webkit-input-placeholder {
+  color: #a0a0a0;
+  opacity: 1;
+}
+input[type=text]::-moz-placeholder, input[type=email]::-moz-placeholder {
+  color: #a0a0a0;
+  opacity: 1;
+}
+input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder {
+  color: #a0a0a0;
+  opacity: 1;
+}
+input[type=text]::-ms-input-placeholder, input[type=email]::-ms-input-placeholder {
+  color: #a0a0a0;
+  opacity: 1;
+}
+input[type=text]::placeholder,
+input[type=email]::placeholder {
+  color: #a0a0a0;
+  opacity: 1;
+}
+
+.form__radio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 11.3rem;
+     -moz-column-gap: 11.3rem;
+          column-gap: 11.3rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form__radio-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 1.9rem;
+     -moz-column-gap: 1.9rem;
+          column-gap: 1.9rem;
+  font-size: 1.8rem;
+  line-height: 1.3888888889;
+}
+
+/* ラジオボタンの外形 */
+input[type=radio] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0.1rem solid #fff;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  background: #fff;
+  position: relative;
+}
+
+/* ラジオボタンの内側スタイル */
+input[type=radio]::before {
+  background: #000;
+  border-radius: 50%;
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  inset: 0;
+  margin: auto;
+  opacity: 0;
+  position: absolute;
+}
+
+/* チェックされたらラジオボタン内側を表示 */
+input[type=radio]:checked::before {
+  opacity: 1;
+}
+
+.form__select {
+  position: relative;
+}
+.form__select select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: #fff;
+  width: 100%;
+  height: 5rem;
+  padding: 1.25rem 2rem;
+  font-size: 1.8rem;
+  line-height: 1.3888888889;
+  cursor: pointer;
+}
+.form__select::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 1.7rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 1rem solid transparent;
+  border-right: 1rem solid transparent;
+  border-top: 1.6rem solid #4D9600;
+  pointer-events: none;
+}
+
+.form__textarea {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.form__textarea textarea {
+  background: #fff;
+  width: 100%;
+  resize: none;
+  padding: 1rem 2rem;
+  font-size: 1.8rem;
+  line-height: 1.3888888889;
+}
+
+.form__textarea--1 textarea {
+  height: 20rem;
+}
+
+.form__textarea--2 textarea {
+  height: 30rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+  padding: 4rem 6rem 4rem 4rem;
+}
+.form__textarea--2 textarea::-webkit-scrollbar {
+  width: 2rem;
+}
+.form__textarea--2 textarea::-webkit-scrollbar-button {
+  display: none;
+}
+.form__textarea--2 textarea::-webkit-scrollbar-track {
+  margin-block: 1rem;
+  background-color: #e3e3e3;
+  border-right: 1rem solid transparent;
+  background-clip: content-box;
+}
+.form__textarea--2 textarea::-webkit-scrollbar-thumb {
+  min-height: 3rem;
+  background-color: #9b9b9b;
+  border-right: 1rem solid transparent;
+  background-clip: content-box;
+}
+
+.form__checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-column-gap: 2rem;
+     -moz-column-gap: 2rem;
+          column-gap: 2rem;
+  row-gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.form__checkbox-item {
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 18rem;
+          flex: 0 0 18rem;
+  font-size: 1.8rem;
+  line-height: 1.3888888889;
+}
+
+/* 標準のチェックボックスを画面上から隠す */
+.form__checkbox-item input[type=checkbox] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* 選択肢文字列 */
+.form__checkbox-item label {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 2rem;
+  padding-left: 4rem;
+  cursor: pointer;
+}
+
+/* チェックボックスの外形 */
+.form__checkbox-item label::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  background: #fff;
+}
+
+/* 選択時のチェックマーク */
+.form__checkbox-item input[type=checkbox]:checked + label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0.7rem;
+  width: 0.7rem;
+  height: 1.4rem;
+  border-right: 0.2rem solid #4D9600;
+  border-bottom: 0.2rem solid #4D9600;
+  -webkit-transform: translateY(-60%) rotate(45deg);
+          transform: translateY(-60%) rotate(45deg);
+}
+
+.contact__button {
+  margin-top: 8rem;
+  margin-inline: auto;
+  max-width: 30rem;
+}
+
+input[type=submit] {
+  width: 100%;
+  height: 5rem;
+  padding: 0;
+  background-color: #4D9600;
+  color: #fff;
+  border: 1px solid #4D9600;
+  font-size: 2rem;
+  line-height: 1.65;
+  text-align: center;
+  padding-bottom: 0.2rem;
+  cursor: pointer;
+  -webkit-transition: color 0.4s, background-color 0.4s;
+  transition: color 0.4s, background-color 0.4s;
+}
+
+@media (min-width: 768px) {
+  input[type=submit]:hover {
+    color: #4D9600;
+    background-color: #fff;
+  }
 }/*# sourceMappingURL=style.css.map */
