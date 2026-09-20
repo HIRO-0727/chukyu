@@ -43,65 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// // WORKS モーダル
 
-// // WORKS 1つ目をクリックしてモーダルを開く
-// const worksItem1 = document.querySelector(".works__item--1");
-// const worksModal = document.querySelector(".works__modal");
-
-// worksItem1.addEventListener("click", function () {
-//     if (!worksModal.open) {
-//         worksModal.showModal();
-//     }
-// });
-
-// // モーダルを閉じる
-// const modalCancelButtons = document.querySelectorAll(".modal-cancel");
-
-// modalCancelButtons.forEach(function (button) {
-//     button.addEventListener("click", function () {
-//         worksModal.close();
-//     });
-// });
-
-
-// // WORKS モーダル
-// const $worksModal = $(".works__modal");
-// const worksModal = $worksModal[0];
-
-// // モーダルを開く
-// $(".works__item--1").click(function () {
-//     if (!worksModal.open) {
-//         worksModal.showModal();
-
-//         // 背景画面のスクロールを禁止
-//         $("html, body").addClass("is-modal-open");
-//     }
-// });
-
-// // モーダルを閉じる共通処理
-// function closeWorksModal() {
-//     if (worksModal.open) {
-//         worksModal.close();
-//     }
-// }
-
-// // ×ボタンで閉じる
-// $(".modal-cancel").click(function () {
-//     closeWorksModal();
-// });
-
-// // モーダル外側の背景をクリックして閉じる
-// $worksModal.click(function (event) {
-//     if (event.target === this) {
-//         closeWorksModal();
-//     }
-// });
-
-// // モーダルが閉じられたとき、スクロール禁止を解除
-// $worksModal.on("close", function () {
-//     $("html, body").removeClass("is-modal-open");
-// });
 
 // WORKS モーダル
 const $worksModal = $(".works__modal");

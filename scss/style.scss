@@ -113,6 +113,37 @@ img {
     background: $color-background;
 }
 
+// トップへ戻るボタン
+.top__link {
+    position: fixed;
+    right: 2rem;
+    bottom: 6rem;
+    
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: opacity 0.4s;
+
+    &[data-aos="top-button"].aos-animate {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    img {
+        width: 5rem;
+        height: auto;
+    }
+}
+
+
+
+
 /*---------------
 header
 ---------------*/
@@ -179,6 +210,35 @@ header
             &:hover {
                 opacity: 0.7;
             }
+        }
+    }
+}
+
+// ナビゲーションメニューのアンダーバーアニメーション
+
+@media (min-width: 768px) {
+    .header__nav ul {
+        li a {
+            position: relative;
+        }
+        li a::after {
+            background-color: #fff;
+            content: "";
+            height: 0.2rem;
+            left: 0;
+            position: absolute;
+
+            top: calc(50% + 0.9rem + 0.4rem);
+            bottom: auto;
+            
+            transform: scaleX(0);
+            transform-origin: left top;
+            transition: transform 0.4s;
+            width: 100%;
+        }
+
+        li a:hover::after {
+            transform: scaleX(1);
         }
     }
 }
@@ -338,20 +398,22 @@ MVセクション
     position: absolute;
     top: 0;
     left: 0;
-    padding-top: calc(339 / 1080 * 100vw );
     background: rgba(#000, 0.15);
-    display: flex;
     z-index: 100;
 
-    @media (max-width: 767px) {
-        padding-top: calc(219 / 375 * 100vw);
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .mv__catch {
     width: 100%;
-    height: 100%;
-    
+    transform: translateY(calc(9 / 1080 *100vw));
+
+    @media (max-width: 767px) {
+        transform: translateY(calc(-21.5 / 375 *100vw));
+    }
+
     h2 {
         font-size: 4rem;
         font-weight: 600;
