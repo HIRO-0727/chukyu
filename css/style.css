@@ -1166,22 +1166,26 @@ CONTACT お問い合わせ
   }
 }
 
-.form__item--1 {
+.form__item--1,
+.form__item--3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 1rem;
-     -moz-column-gap: 1rem;
-          column-gap: 1rem;
+  -webkit-column-gap: 1.9rem;
+     -moz-column-gap: 1.9rem;
+          column-gap: 1.9rem;
   height: 5rem;
 }
-.form__item--1:not(:first-of-type) {
+.form__item--1:not(:first-of-type),
+.form__item--3:not(:first-of-type) {
   margin-top: 5rem;
 }
+
 @media (max-width: 767px) {
   .form__item--1 {
-    display: block;
-    row-gap: 3rem;
+    display: grid;
+    row-gap: 0;
+    height: auto;
   }
   .form__item--1:not(:first-of-type) {
     margin-top: 3rem;
@@ -1189,12 +1193,15 @@ CONTACT お問い合わせ
 }
 
 @media (max-width: 767px) {
-  .form__gender {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+  .form__item--3:not(:first-of-type) {
+    margin-top: 3rem;
+    row-gap: 3.3rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
+
 .form__input,
 .form__select {
   -webkit-box-flex: 1;
@@ -1207,14 +1214,30 @@ CONTACT お問い合わせ
   row-gap: 1rem;
   margin-top: 5rem;
 }
+@media (max-width: 767px) {
+  .form__item--2 {
+    margin-top: 3rem;
+    row-gap: 0;
+  }
+}
 
 .form__label {
   font-size: 2rem;
   line-height: 1.65;
 }
-.form__label--1 {
+.form__label--1, .form__label--3 {
   padding-top: 0.9rem;
   width: 15.1rem;
+}
+@media (max-width: 767px) {
+  .form__label--1 {
+    padding-top: 0;
+    width: auto;
+  }
+  .form__label--3 {
+    padding-top: 0;
+    width: 5rem;
+  }
 }
 
 input[type=text],
@@ -1247,17 +1270,30 @@ input[type=email]::placeholder {
   color: #a0a0a0;
   opacity: 1;
 }
+@media (max-width: 767px) {
+  input[type=text],
+  input[type=email] {
+    font-size: 1.6rem;
+  }
+}
 
 .form__radio {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 11.3rem;
-     -moz-column-gap: 11.3rem;
-          column-gap: 11.3rem;
+  -webkit-column-gap: 7.4rem;
+     -moz-column-gap: 7.4rem;
+          column-gap: 7.4rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+@media (max-width: 767px) {
+  .form__radio {
+    -webkit-column-gap: 3.9rem;
+       -moz-column-gap: 3.9rem;
+            column-gap: 3.9rem;
+  }
 }
 
 .form__radio-item {
@@ -1272,6 +1308,13 @@ input[type=email]::placeholder {
           column-gap: 1.9rem;
   font-size: 1.8rem;
   line-height: 1.3888888889;
+}
+@media (max-width: 767px) {
+  .form__radio-item {
+    -webkit-column-gap: 1rem;
+       -moz-column-gap: 1rem;
+            column-gap: 1rem;
+  }
 }
 
 /* ラジオボタンの外形 */
@@ -1320,6 +1363,11 @@ input[type=radio]:checked::before {
   line-height: 1.3888888889;
   cursor: pointer;
 }
+@media (max-width: 767px) {
+  .form__select select {
+    font-size: 1.6rem;
+  }
+}
 .form__select::after {
   content: "";
   position: absolute;
@@ -1344,13 +1392,18 @@ input[type=radio]:checked::before {
   background: #fff;
   width: 100%;
   resize: none;
-  padding: 1rem 2rem;
   font-size: 1.8rem;
   line-height: 1.3888888889;
+}
+@media (max-width: 767px) {
+  .form__textarea textarea {
+    font-size: 1.6rem;
+  }
 }
 
 .form__textarea--1 textarea {
   height: 20rem;
+  padding: 1rem 2rem;
 }
 
 .form__textarea--2 textarea {
@@ -1359,6 +1412,12 @@ input[type=radio]:checked::before {
   overflow-x: hidden;
   scrollbar-gutter: stable;
   padding: 4rem 6rem 4rem 4rem;
+}
+@media (max-width: 767px) {
+  .form__textarea--2 textarea {
+    padding: 3rem 5rem 3rem 3rem;
+    height: 32.3rem;
+  }
 }
 .form__textarea--2 textarea::-webkit-scrollbar {
   width: 2rem;
@@ -1391,6 +1450,15 @@ input[type=radio]:checked::before {
   row-gap: 1.5rem;
   margin-top: 1rem;
 }
+@media (max-width: 767px) {
+  .form__checkbox {
+    -webkit-column-gap: 0;
+       -moz-column-gap: 0;
+            column-gap: 0;
+    row-gap: 1rem;
+    margin-top: 0.3rem;
+  }
+}
 
 .form__checkbox-item {
   position: relative;
@@ -1402,6 +1470,14 @@ input[type=radio]:checked::before {
           flex: 0 0 18rem;
   font-size: 1.8rem;
   line-height: 1.3888888889;
+}
+@media (max-width: 767px) {
+  .form__checkbox-item {
+    font-size: 1.6rem;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 15.7rem;
+            flex: 0 0 15.7rem;
+  }
 }
 
 /* 標準のチェックボックスを画面上から隠す */
@@ -1426,6 +1502,11 @@ input[type=radio]:checked::before {
   min-height: 2rem;
   padding-left: 4rem;
   cursor: pointer;
+}
+@media (max-width: 767px) {
+  .form__checkbox-item label {
+    padding-left: 3rem;
+  }
 }
 
 /* チェックボックスの外形 */
@@ -1459,6 +1540,12 @@ input[type=radio]:checked::before {
   margin-top: 8rem;
   margin-inline: auto;
   max-width: 30rem;
+}
+@media (max-width: 767px) {
+  .contact__button {
+    margin-top: 5rem;
+    max-width: 31.5rem;
+  }
 }
 
 input[type=submit] {
