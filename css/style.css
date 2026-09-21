@@ -84,12 +84,20 @@ img {
   text-align: center;
 }
 
+.section__title h2 {
+  text-indent: 0.3em;
+}
+
 .sub-title {
   font-size: 2rem;
   line-height: 1.65;
   color: #000;
   letter-spacing: 0.3em;
   margin-top: 0.6rem;
+}
+
+.sub-title p {
+  text-indent: 0.3rem;
 }
 
 .colored-section {
@@ -267,7 +275,7 @@ ABOUTまでスクロールしたら背景塗りつぶし
 }
 @media (max-width: 767px) {
   .hamburger {
-    margin-right: -2rem;
+    margin-right: -1.5rem;
   }
 }
 .hamburger span {
@@ -282,10 +290,10 @@ ABOUTまでスクロールしたら背景塗りつぶし
   background: #4D9600;
 }
 .hamburger span:nth-of-type(1) {
-  top: 30%;
+  top: 25%;
 }
 .hamburger span:nth-of-type(3) {
-  top: 70%;
+  top: 75%;
 }
 
 /*---------------
@@ -294,7 +302,7 @@ ABOUTまでスクロールしたら背景塗りつぶし
 @media (max-width: 960px) {
   .header-menu {
     position: fixed;
-    width: 30rem;
+    width: 30.4rem;
     height: auto;
     padding: 1.2rem 0 1.3rem 2rem;
     background: #4D9600;
@@ -414,8 +422,8 @@ MVセクション
 }
 @media (max-width: 767px) {
   .mv__catch {
-    -webkit-transform: translateY(-5.7333333333vw);
-            transform: translateY(-5.7333333333vw);
+    -webkit-transform: translate(5px, 2.2666666667vw);
+            transform: translate(5px, 2.2666666667vw);
   }
 }
 .mv__catch h2 {
@@ -495,7 +503,7 @@ ABOUTセクション
 .about__title h2,
 .about__desc h2 {
   font-size: 3rem;
-  letter-spacing: 18%;
+  letter-spacing: 0.5rem;
   line-height: 1;
 }
 @media (max-width: 960px) {
@@ -651,6 +659,12 @@ SERVICEセクション
   line-height: 1.32;
   color: #fff;
 }
+@media (max-width: 767px) {
+  .service__textarea h3 {
+    font-size: 2rem;
+    line-height: 1.25;
+  }
+}
 .service__textarea p {
   margin-top: 1.5740740741vw;
   font-size: 1.6rem;
@@ -707,8 +721,8 @@ SERVICEセクション
     padding-bottom: 3.2vw;
   }
   .service__textarea h3 {
-    font-size: 2.5rem;
-    line-height: 1.32;
+    font-size: 2rem;
+    line-height: 1.25;
   }
   .service__textarea p {
     margin-top: 3.7333333333vw;
@@ -745,6 +759,7 @@ WORKSセクション
 }
 @media (max-width: 767px) {
   .works__contents {
+    margin-top: 3.8rem;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -989,6 +1004,13 @@ NEWS お知らせセクション
 .news__link:hover {
   opacity: 0.7;
 }
+@media (max-width: 767px) {
+  .news__link {
+    -webkit-column-gap: 4.7619047619vw;
+       -moz-column-gap: 4.7619047619vw;
+            column-gap: 4.7619047619vw;
+  }
+}
 
 .news__date {
   line-height: 2.0625;
@@ -1003,6 +1025,11 @@ NEWS お知らせセクション
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   line-clamp: 2;
+}
+@media (max-width: 767px) {
+  .news__desc {
+    margin-top: 0.7rem;
+  }
 }
 
 .news__link {
@@ -1135,7 +1162,7 @@ COMPANY 会社概要
   -ms-flex-negative: 0;
       flex-shrink: 0;
   position: relative;
-  padding-bottom: 5.9782608696%;
+  padding-bottom: 6.7391304348%;
 }
 @media (max-width: 850px) {
   .company__map {
@@ -1143,9 +1170,15 @@ COMPANY 会社概要
   }
 }
 .company__map iframe {
+  display: block;
   width: 100%;
   height: auto;
   aspect-ratio: 600/400;
+}
+@media (max-width: 767px) {
+  .company__map iframe {
+    aspect-ratio: 315/300;
+  }
 }
 @media (max-width: 767px) {
   .company__map {
@@ -1233,36 +1266,52 @@ CONTACT お問い合わせ
   }
 }
 
+.form__items--1 {
+  display: grid;
+  row-gap: 5rem;
+}
+@media (max-width: 767px) {
+  .form__items--1 {
+    row-gap: 3rem;
+  }
+}
+
 .form__item--1,
 .form__item--3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form__item--1 {
   -webkit-column-gap: 1.9rem;
      -moz-column-gap: 1.9rem;
           column-gap: 1.9rem;
-  height: 5rem;
 }
-.form__item--1:not(:first-of-type),
-.form__item--3:not(:first-of-type) {
-  margin-top: 5rem;
-}
-
 @media (max-width: 767px) {
   .form__item--1 {
     display: grid;
     row-gap: 0;
+    -webkit-column-gap: 0;
+       -moz-column-gap: 0;
+            column-gap: 0;
     height: auto;
-  }
-  .form__item--1:not(:first-of-type) {
-    margin-top: 3rem;
   }
 }
 
+.form__item--3 {
+  -webkit-column-gap: 2.2rem;
+     -moz-column-gap: 2.2rem;
+          column-gap: 2.2rem;
+}
 @media (max-width: 767px) {
-  .form__item--3:not(:first-of-type) {
-    margin-top: 3rem;
-    row-gap: 3.3rem;
+  .form__item--3 {
+    -webkit-column-gap: 4.1rem;
+       -moz-column-gap: 4.1rem;
+            column-gap: 4.1rem;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -1279,11 +1328,9 @@ CONTACT お問い合わせ
 .form__item--2 {
   display: grid;
   row-gap: 1rem;
-  margin-top: 5rem;
 }
 @media (max-width: 767px) {
   .form__item--2 {
-    margin-top: 3rem;
     row-gap: 0;
   }
 }
@@ -1293,17 +1340,25 @@ CONTACT お問い合わせ
   line-height: 1.65;
 }
 .form__label--1, .form__label--3 {
-  padding-top: 0.9rem;
   width: 15.1rem;
+}
+.form__label--4 {
+  margin-top: 5.2rem;
 }
 @media (max-width: 767px) {
   .form__label--1 {
     padding-top: 0;
     width: auto;
   }
+  .form__label--5 {
+    line-height: 1.35;
+  }
   .form__label--3 {
     padding-top: 0;
     width: 5rem;
+  }
+  .form__label--4 {
+    margin-top: 3.2rem;
   }
 }
 
@@ -1440,13 +1495,13 @@ input[type=radio]:checked::before {
   position: absolute;
   top: 50%;
   right: 1.7rem;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -webkit-transform: translate(-2px, calc(-50% + 2px));
+          transform: translate(-2px, calc(-50% + 2px));
   width: 0;
   height: 0;
-  border-left: 1rem solid transparent;
-  border-right: 1rem solid transparent;
-  border-top: 1.6rem solid #4D9600;
+  border-left: 0.9rem solid transparent;
+  border-right: 0.9rem solid transparent;
+  border-top: 1.4rem solid #4D9600;
   pointer-events: none;
 }
 
@@ -1456,6 +1511,7 @@ input[type=radio]:checked::before {
           flex: 1;
 }
 .form__textarea textarea {
+  display: block;
   background: #fff;
   width: 100%;
   resize: none;
@@ -1478,10 +1534,14 @@ input[type=radio]:checked::before {
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-gutter: stable;
-  padding: 4rem 6rem 4rem 4rem;
+  padding: 4rem 5.5rem 4rem 4rem;
+  font-size: 1.8rem;
+  line-height: 1.7222222222;
 }
 @media (max-width: 767px) {
   .form__textarea--2 textarea {
+    font-size: 1.6rem;
+    line-height: 2.0625;
     padding: 3rem 5rem 3rem 3rem;
     height: 32.3rem;
   }
@@ -1515,7 +1575,6 @@ input[type=radio]:checked::before {
      -moz-column-gap: 2rem;
           column-gap: 2rem;
   row-gap: 1.5rem;
-  margin-top: 1rem;
 }
 @media (max-width: 767px) {
   .form__checkbox {
@@ -1541,6 +1600,7 @@ input[type=radio]:checked::before {
 @media (max-width: 767px) {
   .form__checkbox-item {
     font-size: 1.6rem;
+    line-height: 1.25;
     -webkit-box-flex: 0;
         -ms-flex: 0 0 15.7rem;
             flex: 0 0 15.7rem;
@@ -1604,7 +1664,7 @@ input[type=radio]:checked::before {
 }
 
 .contact__button {
-  margin-top: 8rem;
+  margin-top: 7.8rem;
   margin-inline: auto;
   max-width: 30rem;
 }
@@ -1625,7 +1685,6 @@ input[type=submit] {
   font-size: 2rem;
   line-height: 1.65;
   text-align: center;
-  padding-bottom: 0.2rem;
   cursor: pointer;
   -webkit-transition: color 0.4s, background-color 0.4s;
   transition: color 0.4s, background-color 0.4s;
@@ -1655,6 +1714,8 @@ input[type=submit] {
   .footer__content {
     padding-top: 5rem;
     padding-bottom: 5rem;
+    width: 84vw;
+    max-width: 48rem;
   }
 }
 
@@ -1701,6 +1762,9 @@ input[type=submit] {
             justify-content: center;
     row-gap: 0.5rem;
     padding: 2rem 0.5rem 2.8rem 0.5rem;
+    -webkit-column-gap: 3rem;
+       -moz-column-gap: 3rem;
+            column-gap: 3rem;
   }
 }
 

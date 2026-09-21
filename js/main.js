@@ -38,7 +38,7 @@ window.addEventListener("DOMContentLoaded", () => {
         speed: 8000,
 
         // autoplay: {
-        //     delay: 0,
+        //     delay: 3000,
         //     disableOnInteraction: false,
         // },
     });
