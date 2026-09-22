@@ -35,12 +35,12 @@ window.addEventListener("DOMContentLoaded", () => {
         loop: true,
         loopedSlides: 2,
         slidesPerView: "auto",
-        speed: 8000,
+        speed: 5000,
 
-        // autoplay: {
-        //     delay: 3000,
-        //     disableOnInteraction: false,
-        // },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
     });
 });
 

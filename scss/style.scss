@@ -285,7 +285,7 @@ ABOUTまでスクロールしたら背景塗りつぶし
             right: -3rem;
         }
         @media (max-width: 767px) {
-            margin-right: -1.5rem;
+            margin-right: -2rem;
         }
 
         // 三本線
@@ -1090,8 +1090,8 @@ COMPANY 会社概要
 
     @media (max-width: 767px) {
         width: 100%;
-        height: auto;
-        aspect-ratio: 315 / 202;
+        height: 20.2rem;
+        aspect-ratio: auto;
         margin-left: 0;
     }
 }
@@ -1176,7 +1176,7 @@ COMPANY 会社概要
 .mail {
     display: flex;
     font-weight: 600;
-    margin-top: calc(19 / 262 * 100%);
+    margin-top: 1.9rem;
 }
 
 /*---------------
@@ -1407,7 +1407,7 @@ input[type="radio"]:checked::before {
         top: 50%;
         right: 1.7rem;
         // transform: translateY(-50%);
-        transform: translate(-2px, calc(-50% + 2px));
+        transform: translate(-2px, calc(-50% + 0.2rem));
 
         width: 0;
         height: 0;
