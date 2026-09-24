@@ -1,24 +1,17 @@
-// ハンバーガーメニュー
+"use strict";
 
-const $menu = $(".header-menu");
+//ハンバーガーメニュー
+$(function() {
+    $('.hamburger').click(function() {
+        $(this).toggleClass('is-active')
+        $('.header-menu').toggleClass('is-active')
+    })
 
-$("#js-hamburger").click(function() {
-    const isClosing = $menu.hasClass("is-open");
-
-    $(".hamburger").toggleClass("is-active");
-    $menu.toggleClass("is-open");
-    $menu.toggleClass("is-close", isClosing);
-    $("#js-overlay").toggleClass("is-open");
-});
-
-
-// 閉じるアニメーションが終わったら外す
-$menu.on("transitionend", function(event) {
-    if (event.target === this &&
-        event.originalEvent.propertyName === "transform") {
-        $menu.removeClass("is-close");
-    }
-});
+    $('.header__nav li a').click(function() {
+        $('.hamburger').removeClass('is-active')
+        $('.header-menu').removeClass('is-active')
+    })
+})
 
 // MV Swiperスライド
 
