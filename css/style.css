@@ -716,6 +716,7 @@ SERVICEセクション
 @media (max-width: 930px) {
   .service__textarea--3 {
     padding-left: 19.53125vw;
+    padding-right: 1rem;
   }
 }
 @media (max-width: 767px) {
