@@ -161,7 +161,6 @@ header
     z-index: 999;
 
     @media (max-width: 767px) {
-        // padding-inline: 2rem;
         padding-inline: 0;
         padding-left: 2rem;
         height: 5rem;
@@ -273,7 +272,6 @@ ABOUTまでスクロールしたら背景塗りつぶし
     display: block;
     width: 7.2rem;
     height: 5rem;
-    // height: 100%;
     background: #fff;
         margin: {
             left: auto;
@@ -1016,10 +1014,6 @@ NEWS お知らせセクション
     }
 }
 
-// .news__link {
-//     border-bottom: 0.1rem solid $color-border;
-// }
-
 .news__footer {
     position: relative;
     padding: {
@@ -1488,9 +1482,6 @@ input[type="radio"]:checked::before {
             padding-left: 1em;
             text-indent: -1em;
         }
-
-        // font-size: 1.8rem;
-        // line-height: calc(25 / 18);
 
         @media (max-width: 767px) {
             font-size: 1.6rem;

@@ -22,10 +22,10 @@ window.addEventListener("DOMContentLoaded", () => {
         slidesPerView: "auto",
         speed: 5000,
 
-        // autoplay: {
-        //     delay: 3000,
-        //     disableOnInteraction: false,
-        // },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
     });
 });
 
