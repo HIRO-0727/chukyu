@@ -432,6 +432,7 @@ MVセクション
         line-height: calc(70 / 40);
         letter-spacing: 0.3em;
         text-align: center;
+        text-shadow: 0.5rem 0.5rem 0.5rem #000;
 
         @media (max-width: 767px) {
             font-size: 3rem;

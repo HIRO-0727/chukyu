@@ -442,6 +442,7 @@ MVセクション
   line-height: 1.75;
   letter-spacing: 0.3em;
   text-align: center;
+  text-shadow: 0.5rem 0.5rem 0.5rem #000;
 }
 @media (max-width: 767px) {
   .mv__catch h2 {
