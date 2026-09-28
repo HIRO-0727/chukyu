@@ -14,9 +14,9 @@ html {
 }
 
 body {
-  font-family: "Yu Mincho", "YuMincho", serif;
+  font-family: "Yu Mincho", "YuMincho", "Noto Serif JP", serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 500;
   color: #000;
   font-size: 1.6rem;
   font-style: normal;
@@ -85,20 +85,19 @@ img {
   text-align: center;
 }
 
-.section__title h2 {
+.section__title-en {
+  display: block;
   text-indent: 0.3em;
 }
 
 .sub-title {
+  display: block;
   font-size: 2rem;
   line-height: 1.65;
   color: #000;
   letter-spacing: 0.3em;
-  margin-top: 0.6rem;
-}
-
-.sub-title p {
   text-indent: 0.3rem;
+  margin-top: 0.6rem;
 }
 
 .colored-section {
@@ -106,28 +105,32 @@ img {
 }
 
 .top__link {
+  width: 6.8rem;
+  height: 6.8rem;
   position: fixed;
-  right: 2rem;
   bottom: 6rem;
+  right: 6rem;
+  z-index: 999;
   opacity: 0;
   visibility: hidden;
-  pointer-events: none;
-  -webkit-transition: opacity 0.4s;
-  transition: opacity 0.4s;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
 }
-.top__link[data-aos=top-button].aos-animate {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-@media (min-width: 768px) {
-  .top__link[data-aos=top-button].aos-animate:hover {
-    opacity: 0.7;
+@media (max-width: 767px) {
+  .top__link {
+    width: 5rem;
+    height: 5rem;
+    right: 2rem;
   }
 }
-.top__link img {
-  width: 5rem;
-  height: auto;
+.top__link.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+[data-aos=fade-up] {
+  -webkit-transform: translate3d(0, 30px, 0);
+          transform: translate3d(0, 30px, 0);
 }
 
 /*---------------
@@ -553,8 +556,8 @@ SERVICEセクション
 .service {
   position: relative;
   padding-inline: 3rem;
-  padding-top: 7.4074074074vw;
-  padding-bottom: 6.2962962963vw;
+  padding-top: 8rem;
+  padding-bottom: 6.8rem;
 }
 @media (max-width: 767px) {
   .service {
@@ -746,8 +749,8 @@ WORKSセクション
 .works {
   position: relative;
   padding-inline: 3rem;
-  padding-top: 7.4074074074vw;
-  padding-bottom: 8.9814814815vw;
+  padding-top: 8rem;
+  padding-bottom: 9.7rem;
 }
 @media (max-width: 767px) {
   .works {

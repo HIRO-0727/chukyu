@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
     <title>北村建設興業</title>
     <link rel="icon" href="./img/house.svg" type="image/svg+xml">
     <meta name="description" content="株式会社北村建設興業の公式サイトです。">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/aos.css">
     <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./css/aos.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Google FontsからNoto Serif JPを読み込む -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+    
 </head>
 <body>
     <div id="container">
@@ -124,10 +131,10 @@
             <section id="service" class="service colored-section">
                 <div class="inner">
                     <div class="section__title" data-aos="fade-up">
-                        <h2>SERVICE</h2>
-                        <div class="sub-title">
-                            <p>サービス</p>
-                        </div>
+                        <h2>
+                            <span class="section__title-en" lang="en">SERVICE</span>
+                            <span class="sub-title">サービス</span>
+                        </h2>
                     </div>
                     <div class="service__contents">
                         <div class="service__item service__item--1" data-aos="fade-up">
@@ -195,10 +202,10 @@
             <section id="works" class="works">
                 <div class="inner">
                     <div class="section__title" data-aos="fade-up">
-                        <h2>WORKS</h2>
-                        <div class="sub-title">
-                            <p>施工事例</p>
-                        </div>
+                        <h2>
+                            <span class="section__title-en" lang="en">WORKS</span>
+                            <span class="sub-title">施工事例</span>
+                        </h2>
                     </div>
                     <div class="works__contents">
                         <div class="works__item works__item--1" data-aos="fade-up">
@@ -320,10 +327,10 @@
             <section id="news" class="news colored-section">
                 <div class="inner">
                     <div class="section__title" data-aos="fade-up">
-                        <h2>NEWS</h2>
-                        <div class="sub-title">
-                            <p>お知らせ</p>
-                        </div>
+                        <h2>
+                            <span class="section__title-en" lang="en">NEWS</span>
+                            <span class="sub-title">お知らせ</span>
+                        </h2>
                     </div>
                     <div class="news__contents">
                         <div class="news__item news__item--1" data-aos="fade">
@@ -416,10 +423,10 @@
             <section id="company" class="company">
                 <div class="inner">
                     <div class="section__title" data-aos="fade-up">
-                        <h2>COMPANY</h2>
-                        <div class="sub-title">
-                            <p>会社概要</p>
-                        </div>
+                        <h2>
+                            <span class="section__title-en" lang="en">COMPANY</span>
+                            <span class="sub-title">会社概要</span>
+                        </h2>
                     </div>
                     <div class="company__contents" data-aos="fade">
                         <div class="company__map">
@@ -460,10 +467,10 @@
             <section id="contact" class="contact colored-section">
                 <div class="inner">
                     <div class="section__title" data-aos="fade-up">
-                        <h2>CONTACT</h2>
-                        <div class="sub-title">
-                            <p>お問い合わせ</p>
-                        </div>
+                        <h2>
+                            <span class="section__title-en" lang="en">CONTACT</span>
+                            <span class="sub-title">お問い合わせ</span>
+                        </h2>
                     </div>
                     <div class="contact__contents">
                         <div class="contact__desc" data-aos="fade-up">
@@ -796,18 +803,23 @@
                 </a>
             </div>
         </footer>
-        <div class="button__top">
-            <a href="#" class="top__link" data-aos="top-button" data-aos-anchor="#about" data-aos-anchor-placement="top-top">
-                <img src="./img/button-top.png" alt="トップへ戻る">
+
+        <!-- トップへ戻るボタン -->
+            <a href="#" class="top__link">
+                <div class="btn__top-icon">
+                    <img src="./img/button-top.svg" alt="トップへ戻る">
+                </div>
             </a>
-        </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/aos.js"></script>
     <script>
-    AOS.init();
+    AOS.init({
+        duration: 1200,
+        easing: "ease-out",
+    });
     </script>
 </body>
 </html>

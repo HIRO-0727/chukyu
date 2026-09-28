@@ -19,9 +19,9 @@ html {
 }
 
 body {
-    font-family: "Yu Mincho", "YuMincho", serif;
+    font-family: "Yu Mincho", "YuMincho", "Noto Serif JP", serif;
     font-optical-sizing: auto;
-    font-weight: 400;
+    font-weight: 500;
     color: $color-text;
     font-size: 1.6rem;
     font-style: normal;
@@ -94,23 +94,20 @@ img {
     text-align: center;
 }
 
-.section__title {
-    h2 {
-        text-indent: 0.3em;
-    }
+.section__title-en {
+    display: block;
+    text-indent: 0.3em;
 }
 
 .sub-title {
+    display: block;
     font-size: 2rem;
     line-height: calc(33 / 20);
     color: $color-text;
     letter-spacing: 0.3em;
+    text-indent: 0.3rem;
     margin-top: 0.6rem;
 
-}
-
-.sub-title p {
-    text-indent: 0.3rem;
 }
 
 .colored-section {
@@ -119,32 +116,30 @@ img {
 
 // トップへ戻るボタン
 .top__link {
+    width: 6.8rem;
+    height: 6.8rem;
     position: fixed;
-    right: 2rem;
     bottom: 6rem;
-    
+    right: 6rem;
+    z-index: 999;
     opacity: 0;
     visibility: hidden;
-    pointer-events: none;
-
-    transition: opacity 0.4s;
-
-    &[data-aos="top-button"].aos-animate {
+    transition: all 0.4s;
+    @media (max-width: 767px) {
+        width: 5rem;
+        height: 5rem;
+        right: 2rem;
+    }
+    &.active {
         opacity: 1;
         visibility: visible;
-        pointer-events: auto;
-
-        @media (min-width: 768px) {
-            &:hover {
-                opacity: 0.7;
-            }
-        }
     }
+}
 
-     img {
-        width: 5rem;
-        height: auto;
-    }
+// fade-upの距離調整
+
+[data-aos="fade-up"] {
+    transform: translate3d(0, 30px, 0);
 }
 
 
@@ -528,8 +523,8 @@ SERVICEセクション
     position: relative;
     padding-inline: 3rem;
     padding: {
-        top: calc(80 / 1080 * 100vw);
-        bottom: calc(68 / 1080 * 100vw);
+        top: 8rem;
+        bottom: 6.8rem;
     } 
     @media (max-width: 767px) {
         padding: {
@@ -731,8 +726,8 @@ WORKSセクション
     position: relative;
     padding-inline: 3rem;
     padding: {
-        top: calc(80 / 1080 * 100vw);
-        bottom: calc(97 / 1080 * 100vw);
+        top: 8rem;
+        bottom: 9.7rem;
     } 
     @media (max-width: 767px) {
         padding: {

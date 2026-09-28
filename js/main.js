@@ -84,3 +84,14 @@ $worksModal.on("close", function () {
     // 表示状態をリセット
     $modalContents.removeClass("is-active");
 });
+
+// トップへ戻るボタン
+$(window).scroll(function() {
+    const scrollTop = $(this).scrollTop();
+
+    if(scrollTop > 100) {
+        $('.top__link').addClass('active');
+    } else {
+        $('.top__link').removeClass('active');
+    }
+});
