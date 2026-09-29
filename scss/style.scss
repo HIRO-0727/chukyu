@@ -2,6 +2,7 @@ $color-main: #4D9600;
 $color-text: #000;
 $color-border: #55A500;
 $color-background: rgba(#4d9600, 0.1);
+$contact-background: rgba(#4d9600, 0.15);
 $color-modal-bg: rgba(#000, 0.502);
 
 /*---------------
@@ -59,7 +60,7 @@ common
   }
 }
 
-@media (min-width: 961px) {
+@media (min-width: 768px) {
 .hamburger {
    display: none !important;
   }
@@ -179,7 +180,12 @@ header
         color: #fff;
         transition: opacity 0.4s;
 
+        @media (max-width: 930px) {
+            font-size: 1.8rem;
+        }
+
         @media (max-width: 767px) {
+            font-size: 2rem;
             line-height: calc(33 / 20);
             height: 5rem;
         }
@@ -196,6 +202,9 @@ header
     display: flex;
     align-items: center;
     column-gap: 3.08rem;
+    @media (max-width: 930px) {
+        column-gap: 1.5rem;
+    }
     li a {
         height: 8rem;
         display: flex;
@@ -203,12 +212,9 @@ header
         line-height: calc(18 / 18);
         font-size: 1.8rem;
         color: #fff;
-        transition: opacity 0.4s;
 
-        @media (min-width: 768px)  {
-            &:hover {
-                opacity: 0.7;
-            }
+        @media (max-width: 930px) {
+            font-size: 1.6rem;
         }
     }
 }
@@ -302,38 +308,30 @@ ABOUTまでスクロールしたら背景塗りつぶし
 /*---------------
 ナビゲーション中身
 ---------------*/
-@media (max-width: 960px) {
+@media (max-width: 767px) {
     .header-menu {
         position: fixed;
         width: 30rem;
         height: auto;
-        padding: 1.2rem 0 1.3rem 2rem;
         background: $color-main;
-        top: 8rem;
+        top: 5rem;
         right: 0;
         transform: translate(100%);
-        
         transition: all 0.4s;
 
-        @media (max-width: 767px) {
-            top: 5rem;
-        }
-        
         ul {
-            display: block;
+            display: flex;
             margin: 0;
-            
-            text-align: center;
-            font-size: 1.8rem;
-            li a {
-                    height: auto;
-                    line-height: calc(33 / 18);
-                }
+            flex-direction: column;
+            align-items: stretch;
 
-            li:not(:last-of-type) {
-                margin-bottom: 2.5rem;
-                
-            }
+            li a {
+                    width: 100%;
+                    height: 5.8rem;
+                    padding-left: 2rem;
+                    line-height: calc(33 / 18);
+                    font-size: 1.8rem;
+                }
         }
 
     }
@@ -413,11 +411,13 @@ MVセクション
 .mv__catch {
     width: 100%;
     padding-top: calc(17 / 1080 *100vw);
-    padding-left: calc(15 / 1080 * 100vw); 
+    // padding-left: calc(15 / 1080 * 100vw); 
+    padding-left: 4rem;
 
     @media (max-width: 767px) {
         padding-top: calc(13 / 375 *100vw);
-        padding-left: calc(10 / 375 * 100vw);
+        // padding-left: calc(10 / 375 * 100vw);
+        padding-left: 3rem;
     }
 
     h2 {
@@ -459,11 +459,12 @@ ABOUTセクション
     top: 0;
     left: 0;
     padding: {
-        top: calc(109 / 1080 * 100vw);
+        // top: calc(109 / 1080 * 100vw);
         right: calc(438 / 1080 * 100vw);
     }
     display: flex;
     flex-direction: row-reverse;
+    align-items: center;
     z-index: 100;
 
     @media (max-width: 767px) {
@@ -486,7 +487,7 @@ ABOUTセクション
 
     h2 {
         font-size: 3rem;
-        letter-spacing: 0.5rem;
+        letter-spacing: 0.18em;
         line-height: 1;
 
         @media (max-width: 960px) {
@@ -565,10 +566,16 @@ SERVICEセクション
     height: auto;
     flex-shrink: 0;
     position: relative;
+    padding-bottom: 5.1rem;
+
+    &--3 {
+        padding-bottom: 6.3rem;
+    }
 
     @media (max-width: 767px) {
         width: 100%;
         height: auto;
+        padding-bottom: 0;
     }
 }
 
@@ -585,20 +592,22 @@ SERVICEセクション
 }
 
 .pic-title {
-    padding: {
-        top: 1.9rem;
-        bottom: 5.1rem;
-    }
+    margin-top: 1.9rem;
+    // padding: {
+    //     top: 1.9rem;
+    //     bottom: 5.1rem;
+    // }
 
-    &--3 {
-        padding-bottom: 6.3rem;
-    }
+    // &--3 {
+    //     padding-bottom: 6.3rem;
+    // }
 
     @media (max-width: 767px) {
-        padding: {
-            top: 0.5rem;
-            bottom: 0;
-        }
+        margin-top: 0.5rem;
+        // padding: {
+        //     top: 0.5rem;
+        //     bottom: 0;
+        // }
     }
     p {
         font-size: 1.6rem;
@@ -618,7 +627,7 @@ SERVICEセクション
 .service__textarea {
     width: calc(500 / 920 * 100%);
     height: auto;
-    aspect-ratio: 500 / 250;
+    // aspect-ratio: 500 / 250;
     flex-shrink: 0;
     background: $color-main;
 
@@ -633,6 +642,10 @@ SERVICEセクション
         font-weight: 600;
         line-height: calc(33 / 25);
         color: #fff;
+
+        @media (max-width: 930px) {
+            font-size: 2rem;
+        }
     }
 
     @media (max-width: 767px) {
@@ -647,6 +660,10 @@ SERVICEセクション
         font-weight: 600;
         line-height: calc(25 / 16);
         color: #fff;
+
+        @media (max-width: 930px) {
+            font-size: 1.4rem;
+        }
     }
 
     &--1 {
@@ -660,7 +677,8 @@ SERVICEセクション
         }
 
         @media (max-width: 930px) {
-            padding-left: calc(150 / 768 * 100vw);
+            // padding-left: calc(150 / 768 * 100vw);
+            padding-left: calc(165 / 768 * 100vw);
         }
 
         h3 {
@@ -686,12 +704,12 @@ SERVICEセクション
         padding: {
             top: calc(38 / 920 * 100%);
             right: calc(27 / 920 *100%);
-            bottom: calc(42 / 920 * 100%);
+            bottom: calc(54 / 920 * 100%);
             left: calc(238 / 920 * 100%);
         }
         
         @media (max-width: 930px) {
-            padding-left: calc(150 / 768 * 100vw);
+            padding-left: calc(165 / 768 * 100vw);
             padding-right: 1rem;
         }
     }
@@ -714,6 +732,7 @@ SERVICEセクション
             }
 
             p {
+                font-size: 1.6rem;
                 margin-top: calc(14 / 375 * 100vw);
             }
     }
@@ -739,12 +758,14 @@ WORKSセクション
 
 .works__contents {
     margin-top: 6.8rem;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    // justify-content: space-between;
     column-gap: calc(40 / 920 * 100%);
 
     @media (max-width: 767px) {
         margin-top: 3.8rem;
+        display: flex;
         flex-direction: column;
         justify-content: flex-start;
         row-gap: 2.2rem;
@@ -945,17 +966,18 @@ NEWS お知らせセクション
     }
 }
 
-.news__list {
-    li {
-        background: #fff;
+.news__body {
+    padding: 0 2rem 3.1rem 2rem;
+    background: #fff;
+}
 
-        &::after {
-            content: "";
-            display: block;
-            height: 0.1rem;
-            margin-inline: 2rem;
-            background-color: $color-border;
-        }
+.news__list {
+    // padding-inline: 2rem;
+    background: #fff;
+
+    li {
+        // padding-inline: 2rem;
+        border-bottom: 0.1rem solid $color-border;
     }
 }
 
@@ -967,8 +989,8 @@ NEWS お知らせセクション
     column-gap: calc(65 / 390 * 100%);
     padding-top: 2.3rem;
     padding-bottom: 1.2rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    // margin-left: 2rem;
+    // margin-right: 2rem;
     transition: opacity 0.4s;
 
     &--2 {
@@ -1015,8 +1037,8 @@ NEWS お知らせセクション
     position: relative;
     padding: {
         top: 2.3rem;
-        right: 2rem;
-        bottom: 3.1rem;
+        // right: 2rem;
+        // bottom: 3.1rem;
     }
     background: #fff;
 }
@@ -1047,14 +1069,16 @@ NEWS お知らせセクション
 
 .news__footer-icon {
     position: absolute;
-    width: 8rem;
+    // width: 8rem;
+    width: 8.2rem;
     height: auto;
-    right: -0.26rem;
+    // right: -0.26rem;
+    right: -0.2rem;
     bottom: -1.1rem;
 
-    img {
-        aspect-ratio: 80 / 18;
-    }
+    // img {
+    //     aspect-ratio: 80 / 18;
+    // }
 }
 
 /*---------------
@@ -1181,6 +1205,10 @@ COMPANY 会社概要
     font-size: 2.5rem;
     font-weight: 600;
     line-height: calc(25 / 25);
+
+    @media (min-width: 768px) {
+        pointer-events: none;
+    }
 }
 
 .mail {
@@ -1204,6 +1232,7 @@ CONTACT お問い合わせ
 ---------------*/
 .contact {
     padding: 8rem 3rem 8rem;
+    background: $contact-background;
 
     @media (max-width: 767px) {
         padding: 5rem 3rem;
@@ -1433,7 +1462,7 @@ input[type="radio"]:checked::before {
         width: 100%;
         resize: none;
         font-size: 1.8rem;
-        line-height: calc(25 / 18);
+        line-height: calc(30 / 18);
 
         @media (max-width: 767px) {
             font-size: 1.6rem;
@@ -1465,7 +1494,7 @@ input[type="radio"]:checked::before {
         line-height: calc(31 / 18);
 
         .mokuteki h3 {
-            margin-top: 3.8rem;
+            margin-top: 4rem;
 
         }
         
@@ -1559,7 +1588,7 @@ input[type="radio"]:checked::before {
 /* 選択肢文字列 */
 .form__checkbox-item label {
     position: relative;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     min-height: 2rem;
     padding-left: 4rem;
@@ -1654,20 +1683,21 @@ input[type="submit"] {
 .company__name {
     font-size: 2rem;
     line-height: calc(33 / 20);
-    margin-bottom: 2.8rem;
+    // margin-bottom: 2.8rem;
     text-align: center;
 
-    @media (max-width: 767px) {
-        margin-bottom: 2rem;
-    }
+    // @media (max-width: 767px) {
+    //     margin-bottom: 2rem;
+    // }
 }
 
 .footer-nav__lists {
     display: flex;
     flex-wrap: wrap;
-    column-gap: 5rem;
+    column-gap: 4.8rem;
     justify-content: space-between;
-    padding: 2.8rem 0.6rem 2.6rem 0.6rem;
+    padding: 2.8rem 0.6rem 0 0.6rem;
+    margin-top: 2.8rem;
 
     font-size: 1.8rem;
     line-height: calc(33 / 18);
@@ -1676,13 +1706,14 @@ input[type="submit"] {
 
     @media (max-width: 930px) {
         column-gap: 2rem;
+        margin-top: 2rem;
     }
 
     @media (max-width: 767px) {
         justify-content: center;
         row-gap: 0.5rem;
-        padding: 2rem 0.5rem 2.8rem 0.5rem;
-        column-gap: 3rem;
+        padding: 2rem 0.5rem 0 0.5rem;
+        column-gap: 2.8rem;
     }
 }
 
@@ -1701,6 +1732,7 @@ input[type="submit"] {
     align-items: center;
     justify-content: center;
     column-gap: 3rem;
+    margin-top: 2.6rem;
 }
 
 .sns__link {
