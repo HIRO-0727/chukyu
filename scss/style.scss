@@ -412,12 +412,10 @@ MVセクション
 .mv__catch {
     width: 100%;
     padding-top: calc(17 / 1080 *100vw);
-    // padding-left: calc(15 / 1080 * 100vw); 
     padding-left: 4rem;
 
     @media (max-width: 767px) {
         padding-top: calc(13 / 375 *100vw);
-        // padding-left: calc(10 / 375 * 100vw);
         padding-left: 3rem;
     }
 
@@ -459,10 +457,7 @@ ABOUTセクション
     position: absolute;
     top: 0;
     left: 0;
-    padding: {
-        // top: calc(109 / 1080 * 100vw);
-        right: calc(438 / 1080 * 100vw);
-    }
+    padding-right: calc(438 / 1080 * 100vw);
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
@@ -595,21 +590,9 @@ SERVICEセクション
 
 .pic-title {
     margin-top: 1.9rem;
-    // padding: {
-    //     top: 1.9rem;
-    //     bottom: 5.1rem;
-    // }
-
-    // &--3 {
-    //     padding-bottom: 6.3rem;
-    // }
 
     @media (max-width: 767px) {
         margin-top: 0.5rem;
-        // padding: {
-        //     top: 0.5rem;
-        //     bottom: 0;
-        // }
     }
     p {
         font-size: 1.6rem;
@@ -629,7 +612,6 @@ SERVICEセクション
 .service__textarea {
     width: calc(500 / 920 * 100%);
     height: auto;
-    // aspect-ratio: 500 / 250;
     flex-shrink: 0;
     background: $color-main;
 
@@ -679,7 +661,6 @@ SERVICEセクション
         }
 
         @media (max-width: 930px) {
-            // padding-left: calc(150 / 768 * 100vw);
             padding-left: calc(165 / 768 * 100vw);
         }
 
@@ -762,7 +743,6 @@ WORKSセクション
     margin-top: 6.8rem;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    // justify-content: space-between;
     column-gap: calc(40 / 920 * 100%);
 
     @media (max-width: 767px) {
@@ -811,14 +791,6 @@ WORKSセクション
 /*---------------
 WORKS モーダル
 ---------------*/
-// .works__modal[open] {
-//     border: 0;
-//     padding: 0;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-// }
-
 .works__modal[open] {
     position: fixed;
     inset: 0;
@@ -835,8 +807,8 @@ WORKS モーダル
 }
 
 .works__modal::backdrop {
-    background: rgba(#000, 0);
-    transition: background 0.4s ease;
+    background-color: rgba(#000, 0);
+    transition: background-color 0.4s ease;
     
 }
 
@@ -844,77 +816,26 @@ WORKS モーダル
     background: $color-modal-bg;
 }
 
-// .modal__contents {
-//     position: relative;
-//     display: none;
-//     flex-direction: column;
-//     width: calc(450 / 1080 * 100vw);
-//     height: auto;
-//     aspect-ratio: 450 / 275;
-//     background: #fff;
-
-//     @media (max-width: 767px) {
-//         width: calc(100vw - 6rem);
-//         max-width: 45rem;
-//         aspect-ratio: 315 / 210;
-//     }
-// }
-
 .modal__contents {
     display: none;
     width: 45rem;
-    // padding: calc(15 / 1080 * 100vw);
     padding-top: 1.5rem;
     padding-right: 1.5rem;
     padding-left: 1.5rem;
     background: #fff;
 
-    // モーダルを開く前の状態
-    // opacity: 0;
-    // transition: opacity $modal-duration ease;
-
     @media (max-width: 767px) {
         width: calc(100vw - 6rem);
         max-width: 45rem;
-        // padding: 2rem;
         padding-top: 2rem;
         padding-right: 2.05rem;
         padding-left: 2.05rem;
     }
 }
 
-// .modal__contents.is-active {
-//     display: flex;
-// }
-
 .modal__contents.is-active {
     display: block;
 }
-
-// モーダル表示後
-// .works__modal.is-visible {
-//     .modal__contents.is-active {
-//         opacity: 1;
-//     }
-// }
-
-// .modal-header { // このクラスは削除
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     width: 100%;
-//     height: 2.5rem;
-//     z-index: 1;
-// }
-
-// モーダルキャンセル Xボタン
-// .modal-cancel {
-//     position: relative;
-//     display: block;
-//     width: 2.5rem;
-//     height: 2.5rem;
-//     margin-left: auto;
-//     caret-color: transparent;
 
 .modal-cancel {
     position: absolute;
@@ -946,30 +867,6 @@ WORKS モーダル
     }
 }
 
-// .modal-pic {
-//     width: calc(420 / 450 * 100%);
-//     height: auto;
-//     aspect-ratio: 420 / 220;
-//     margin: {
-//         top: calc(15 / 450 * 100%);
-//         inline: auto;
-//     }
-//     img {
-//         width: 100%;
-//         height: 100%;
-//         object-fit: cover;
-//     }
-
-//     @media (max-width: 767px) {
-//         width: calc(100% - 4rem);
-//         margin: {
-//             top: 2rem;
-//             right:2rem;
-//             left:2rem;
-//         }
-//     }
-// }
-
 .modal__image {
     // display: block;
     width: 100%;
@@ -981,20 +878,6 @@ WORKS モーダル
         object-fit: cover;
     }
 }
-
-// .modal-desc {
-//     margin: {
-//         top: calc(9 / 450 * 100%);
-//         left: calc(15 / 450 * 100%);
-//     }
-
-//     @media (max-width: 767px) {
-//         margin: {
-//             top: 0.7rem;
-//             left: 2rem;
-//         }
-//     }
-// }
 
 .modal__caption {
     margin-top: 0.9rem;
@@ -1060,11 +943,9 @@ NEWS お知らせセクション
 }
 
 .news__list {
-    // padding-inline: 2rem;
     background: #fff;
 
     li {
-        // padding-inline: 2rem;
         border-bottom: 0.1rem solid $color-border;
     }
 }
@@ -1077,8 +958,6 @@ NEWS お知らせセクション
     column-gap: calc(65 / 390 * 100%);
     padding-top: 2.3rem;
     padding-bottom: 1.2rem;
-    // margin-left: 2rem;
-    // margin-right: 2rem;
     transition: opacity 0.4s;
 
     &--2 {
@@ -1123,11 +1002,7 @@ NEWS お知らせセクション
 
 .news__footer {
     position: relative;
-    padding: {
-        top: 2.3rem;
-        // right: 2rem;
-        // bottom: 3.1rem;
-    }
+    padding-top: 2.3rem;
     background: #fff;
 }
 
@@ -1157,16 +1032,11 @@ NEWS お知らせセクション
 
 .news__footer-icon {
     position: absolute;
-    // width: 8rem;
     width: 8.2rem;
     height: auto;
-    // right: -0.26rem;
     right: -0.2rem;
     bottom: -1.1rem;
 
-    // img {
-    //     aspect-ratio: 80 / 18;
-    // }
 }
 
 /*---------------
@@ -1198,50 +1068,30 @@ COMPANY 会社概要
     }
 }
 
-// .company__info {
-//     width: calc(500 /  920 * 100%);
-//     height: auto;
-//     aspect-ratio: 500 / 262;
-//     flex-shrink: 0;
-//     background: $color-main;
-//     margin-left: calc(-180 / 920 * 100%);
-
-//     @media (max-width: 850px) {
-//         margin-left: calc(-140 / 920 * 100%);
-//     }
-
-//     @media (max-width: 767px) {
-//         width: 100%;
-//         height: 20.2rem;
-//         aspect-ratio: auto;
-//         margin-left: 0;
-//     }
-// }
-
 .company__textarea {
-    width: calc(500 / 920 * 100%); //追記
-    flex-shrink: 0; // 追記
-    margin-left: calc(-180 / 920 * 100%); // 追記
-    padding-top: calc(49 / 920 * 100%); // 追記
+    width: calc(500 / 920 * 100%); 
+    flex-shrink: 0; 
+    margin-left: calc(-180 / 920 * 100%); 
+    padding-top: calc(49 / 920 * 100%); 
     padding-right: 2rem;
-    padding-bottom: 4.2rem; // 追記
-    padding-left: calc(220 / 920 * 100%); //修正 500-> 920
+    padding-bottom: 4.2rem; 
+    padding-left: calc(220 / 920 * 100%); 
     color: #fff;
-    background: $color-main; // 追記
+    background: $color-main; 
 
     @media (max-width: 850px) {
-        margin-left: calc(-140 / 920 * 100%); // 追記
-        padding-top: calc(36 / 920 * 100%); //修正 500-> 920
+        margin-left: calc(-140 / 920 * 100%); 
+        padding-top: calc(36 / 920 * 100%); 
         padding-left: calc(180 / 920 * 100%);
     }
 
     @media (max-width: 767px) {
-        width: 100%; // 追記
-        min-height: 20.2rem; // 追記
-        margin-left: 0; // 追記
+        width: 100%; 
+        min-height: 20.2rem; 
+        margin-left: 0; 
         padding-top: 1.9rem;
         padding-right: 0;
-        padding-bottom: 1.2rem; // 追記
+        padding-bottom: 1.2rem; 
         padding-left: 2rem;
     }
 }
@@ -1781,12 +1631,8 @@ input[type="submit"] {
 .company__name {
     font-size: 2rem;
     line-height: calc(33 / 20);
-    // margin-bottom: 2.8rem;
     text-align: center;
 
-    // @media (max-width: 767px) {
-    //     margin-bottom: 2rem;
-    // }
 }
 
 .footer-nav__lists {
