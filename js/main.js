@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", () => {
         loop: true,
         loopedSlides: 2,
         slidesPerView: "auto",
-        speed: 5000,
+        speed: 2000,
 
         autoplay: {
             delay: 3000,
@@ -35,6 +35,7 @@ window.addEventListener("DOMContentLoaded", () => {
 const $worksModal = $(".works__modal");
 const worksModal = $worksModal[0];
 const $modalContents = $(".modal__contents");
+const modalDuration = 400;
 
 // モーダルを開く
 $(".works__item").click(function () {
@@ -50,18 +51,37 @@ $(".works__item").click(function () {
     $(`.modal__contents--${modalNumber}`).addClass("is-active");
 
     if (!worksModal.open) {
+        $worksModal.removeClass("is-visible is-closing");
         worksModal.showModal();
 
         // 背景画面のスクロールを禁止
         $("html, body").addClass("is-modal-open");
+
+        // フワっと表示アニメ
+        requestAnimationFrame(function () {
+            $worksModal.addClass("is-visible");
+        })
     }
 });
 
 // モーダルを閉じる共通処理
 function closeWorksModal() {
-    if (worksModal.open) {
-        worksModal.close();
+    if (!worksModal.open) {
+        // worksModal.close();
+        return;
     }
+
+    if ($worksModal.hasClass("is-closing")) {
+        return;
+    }
+
+    $worksModal
+        .addClass("is-closing")
+        .removeClass("is-visible");
+
+        setTimeout(function() {
+            worksModal.close();
+        }, modalDuration);
 }
 
 // ×ボタンで閉じる
@@ -82,5 +102,23 @@ $worksModal.on("close", function () {
     $("html, body").removeClass("is-modal-open");
 
     // 表示状態をリセット
+
+    $worksModal.removeClass("is-visible is-closing");
     $modalContents.removeClass("is-active");
+});
+
+$worksModal.on("cancel", function(event) {
+    event.preventDefault();
+    closeWorksModal();
+});
+
+// トップへ戻るボタン
+$(window).scroll(function() {
+    const scrollTop = $(this).scrollTop();
+
+    if(scrollTop > 100) {
+        $('.top__link').addClass('active');
+    } else {
+        $('.top__link').removeClass('active');
+    }
 });

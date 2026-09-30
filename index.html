@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
     <title>北村建設興業</title>
     <link rel="icon" href="./img/house.svg" type="image/svg+xml">
     <meta name="description" content="株式会社北村建設興業の公式サイトです。">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/aos.css">
     <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./css/aos.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Google FontsからNoto Serif JPを読み込む -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+    
 </head>
 <body>
     <div id="container">
@@ -124,10 +131,10 @@
             <section id="service" class="service colored-section">
                 <div class="inner">
                     <div class="section__title" data-aos="fade-up">
-                        <h2>SERVICE</h2>
-                        <div class="sub-title">
-                            <p>サービス</p>
-                        </div>
+                        <h2>
+                            <span class="section__title-en" lang="en">SERVICE</span>
+                            <span class="sub-title">サービス</span>
+                        </h2>
                     </div>
                     <div class="service__contents">
                         <div class="service__item service__item--1" data-aos="fade-up">
@@ -169,7 +176,7 @@
                             </div>
                         </div>
                         <div class="service__item service__item--3" data-aos="fade-up">
-                            <div class="service__image">
+                            <div class="service__image service__image--3">
                                 <div class="service-pic">
                                     <picture>
                                         <source media="(min-width: 768px)" srcset="./img/service3-pc.jpg">
@@ -195,10 +202,10 @@
             <section id="works" class="works">
                 <div class="inner">
                     <div class="section__title" data-aos="fade-up">
-                        <h2>WORKS</h2>
-                        <div class="sub-title">
-                            <p>施工事例</p>
-                        </div>
+                        <h2>
+                            <span class="section__title-en" lang="en">WORKS</span>
+                            <span class="sub-title">施工事例</span>
+                        </h2>
                     </div>
                     <div class="works__contents">
                         <div class="works__item works__item--1" data-aos="fade-up">
@@ -257,60 +264,44 @@
 
                 <!-- モーダル -->
                 <dialog class="works__modal">
+                    <button class="modal-cancel" type="button">
+                        <span></span>
+                        <span></span>
+                    </button>
+
                     <div class="modal__contents modal__contents--1">
-                        <div class="modal-header">
-                            <button class="modal-cancel">
-                                <span></span>
-                                <span></span>
-                            </button>
-                        </div>
-                        <div class="modal-pic modal-pic--1">
+                        <div class="modal__image">
                             <img src="./img/modal1-pc.jpg" alt="長崎県T.O様自宅">
                         </div>
-                        <div class="modal-desc modal-desc--1">
+                        <div class="modal__caption">
                             <p>【新築】長崎県T.O様自宅</p>
                         </div>
                     </div>
+
                     <div class="modal__contents modal__contents--2">
-                        <div class="modal-header">
-                            <button class="modal-cancel">
-                                <span></span>
-                                <span></span>
-                            </button>
-                        </div>
-                        <div class="modal-pic modal-pic--2">
+                        <div class="modal__image">
                             <img src="./img/modal2-pc.jpg" alt="京都府カトリック丹波教会">
                         </div>
-                        <div class="modal-desc modal-desc--2">
-                            <p>【リノベーション】<span>京都府カトリック丹波教会</span></p>
+                        <div class="modal__caption">
+                            <p>【リノベーション】<br>京都府カトリック丹波教会</p>
                         </div>
                     </div>
+
                     <div class="modal__contents modal__contents--3">
-                        <div class="modal-header">
-                            <button class="modal-cancel">
-                                <span></span>
-                                <span></span>
-                            </button>
-                        </div>
-                        <div class="modal-pic modal-pic--3">
+                        <div class="modal__image">
                             <img src="./img/modal3-pc.jpg" alt="東京都A.F様自宅兼事務所">
                         </div>
-                        <div class="modal-desc modal-desc--3">
-                            <p>【新築】東京都A.F様自宅兼事務所</p>
+                        <div class="modal__caption">
+                            <p>【新築】<br>東京都A.F様自宅兼事務所</p>
                         </div>
                     </div>
+
                     <div class="modal__contents modal__contents--4">
-                        <div class="modal-header">
-                            <button class="modal-cancel">
-                                <span></span>
-                                <span></span>
-                            </button>
-                        </div>
-                        <div class="modal-pic modal-pic--4">
+                        <div class="modal__image">
                             <img src="./img/modal4-pc.jpg" alt="山形県銀山温泉協同組合">
                         </div>
-                        <div class="modal-desc modal-desc--4">
-                            <p>【都市開発】山形県銀山温泉協同組合</p>
+                        <div class="modal__caption">
+                             <p>【都市開発】<br>山形県銀山温泉協同組合</p>
                         </div>
                     </div>
                 </dialog>
@@ -320,93 +311,99 @@
             <section id="news" class="news colored-section">
                 <div class="inner">
                     <div class="section__title" data-aos="fade-up">
-                        <h2>NEWS</h2>
-                        <div class="sub-title">
-                            <p>お知らせ</p>
-                        </div>
+                        <h2>
+                            <span class="section__title-en" lang="en">NEWS</span>
+                            <span class="sub-title">お知らせ</span>
+                        </h2>
                     </div>
                     <div class="news__contents">
                         <div class="news__item news__item--1" data-aos="fade">
                             <div class="news__header">
                                 <h3>お知らせ</h3>
                             </div>
-                            <ul class="news__list">
-                                <li>
-                                    <a href="" class="news__link">
-                                        <time datetime="0000.00" class="news__date">
-                                            0000.00
-                                        </time>
-                                        <p class="news__desc">公式Instagram、<span>YouTube</span>はじめました。</p>
+                            <div class="news__body">
+                                <ul class="news__list">
+                                    <li>
+                                        <a href="" class="news__link">
+                                            <time datetime="0000.00" class="news__date">
+                                                0000.00
+                                            </time>
+                                            <p class="news__desc">公式Instagram、<span>YouTube</span>はじめました。</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="news__link news__link--2">
+                                            <time datetime="0000.00" class="news__date">
+                                                0000.00
+                                            </time>
+                                            <p class="news__desc">非住宅 木造建築フェアに出展します。</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="news__link news__link--2">
+                                            <time datetime="0000.00" class="news__date">
+                                                0000.00
+                                            </time>
+                                            <p class="news__desc">公式ホームページがリニューアルしました。</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="news__footer">
+                                    <a href="" class="more__module">
+                                        <div class="news__footer-text">
+                                            <p>more</p>
+                                        </div>
+                                        <div class="news__footer-icon">
+                                            <img src="./img/news-more.svg" alt="矢印アイコン">
+                                        </div>
                                     </a>
-                                </li>
-                                <li>
-                                    <a href="" class="news__link news__link--2">
-                                        <time datetime="0000.00" class="news__date">
-                                            0000.00
-                                        </time>
-                                        <p class="news__desc">非住宅 木造建築フェアに出展します。</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="" class="news__link news__link--2">
-                                        <time datetime="0000.00" class="news__date">
-                                            0000.00
-                                        </time>
-                                        <p class="news__desc">公式ホームページがリニューアルしました。</p>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="news__footer">
-                                <a href="" class="more__module">
-                                    <div class="news__footer-text">
-                                        <p>more</p>
-                                    </div>
-                                    <div class="news__footer-icon">
-                                        <img src="./img/news-more.svg" alt="矢印アイコン">
-                                    </div>
-                                </a>
+                                </div>
                             </div>
+                            
                         </div>
                         <div class="news__item news__item--2" data-aos="fade" data-aos-delay="200">
                             <div class="news__header">
                                 <h3>ブログ</h3>
                             </div>
-                            <ul class="news__list">
-                                <li>
-                                    <a href="" class="news__link">
-                                        <time datetime="0000.00" class="news__date">
-                                            0000.00
-                                        </time>
-                                        <p class="news__desc">あけましておめでとうございます。〜会長から社員まで〜</p>
+                            <div class="news__body">
+                                <ul class="news__list">
+                                    <li>
+                                        <a href="" class="news__link">
+                                            <time datetime="0000.00" class="news__date">
+                                                0000.00
+                                            </time>
+                                            <p class="news__desc">あけましておめでとうございます。〜会長から社員まで〜</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="news__link news__link--2">
+                                            <time datetime="0000.00" class="news__date">
+                                                0000.00
+                                            </time>
+                                            <p class="news__desc">【検証】土地と人に相性はあるのか？</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="news__link news__link--2">
+                                            <time datetime="0000.00" class="news__date">
+                                                0000.00
+                                            </time>
+                                            <p class="news__desc">弊社創業初の入社式が行われました。</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="news__footer">
+                                    <a href="" class="more__module">
+                                        <div class="news__footer-text">
+                                            <p>more</p>
+                                        </div>
+                                        <div class="news__footer-icon">
+                                            <img src="./img/news-more.svg" alt="矢印アイコン">
+                                        </div>
                                     </a>
-                                </li>
-                                <li>
-                                    <a href="" class="news__link news__link--2">
-                                        <time datetime="0000.00" class="news__date">
-                                            0000.00
-                                        </time>
-                                        <p class="news__desc">【検証】土地と人に相性はあるのか？</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="" class="news__link news__link--2">
-                                        <time datetime="0000.00" class="news__date">
-                                            0000.00
-                                        </time>
-                                        <p class="news__desc">弊社創業初の入社式が行われました。</p>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="news__footer">
-                                <a href="" class="more__module">
-                                    <div class="news__footer-text">
-                                        <p>more</p>
-                                    </div>
-                                    <div class="news__footer-icon">
-                                        <img src="./img/news-more.svg" alt="矢印アイコン">
-                                    </div>
-                                </a>
+                                </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -416,17 +413,16 @@
             <section id="company" class="company">
                 <div class="inner">
                     <div class="section__title" data-aos="fade-up">
-                        <h2>COMPANY</h2>
-                        <div class="sub-title">
-                            <p>会社概要</p>
-                        </div>
+                        <h2>
+                            <span class="section__title-en" lang="en">COMPANY</span>
+                            <span class="sub-title">会社概要</span>
+                        </h2>
                     </div>
                     <div class="company__contents" data-aos="fade">
                         <div class="company__map">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3353.2367610550505!2d129.83668981166272!3d32.81249117353892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356aad0aefe2a6b9%3A0x13f32e3d4c83018!2z44CSODUyLTgwNjUg6ZW35bSO55yM6ZW35bSO5biC5qiq5bC-77yR5LiB55uu77yV4oiS77yT77yW!5e0!3m2!1sja!2sjp!4v1788322186478!5m2!1sja!2sjp" width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                         </div>
-                        <div class="company__info">
-                            <div class="company-textarea">
+                            <div class="company__textarea">
                                 <div class="company-title">
                                     <h3>株式会社 北村建設興業</h3>
                                 </div>
@@ -451,19 +447,18 @@
                                     </div>
                                 </address>
                             </div>
-                        </div>
                     </div>
                 </div>
             </section>
 
             <!-- CONTACT（お問い合わせ）セクション -->
-            <section id="contact" class="contact colored-section">
+            <section id="contact" class="contact">
                 <div class="inner">
                     <div class="section__title" data-aos="fade-up">
-                        <h2>CONTACT</h2>
-                        <div class="sub-title">
-                            <p>お問い合わせ</p>
-                        </div>
+                        <h2>
+                            <span class="section__title-en" lang="en">CONTACT</span>
+                            <span class="sub-title">お問い合わせ</span>
+                        </h2>
                     </div>
                     <div class="contact__contents">
                         <div class="contact__desc" data-aos="fade-up">
@@ -482,7 +477,7 @@
                                     </dl>
                                     <dl class="form__item form__item--3">
                                         <dt class="form__label form__label--3">
-                                            <label for="gender">性別</label>
+                                            性別
                                         </dt>
                                         <dd class="form__radio">
                                             <label for="gender-male" class="form__radio-item">
@@ -730,13 +725,15 @@
                 </div>
             </section>
         </main>
+
+        <!-- フッター -->
         <footer class="footer">
             <div class="inner">
                 <div class="footer__content">
                     <div class="company__name">
-                        <h2>
+                        
                             <a href="#">株式会社 北村建設興業</a>
-                        </h2>
+                        
                     </div>
                     <!-- ナビゲーション設置 -->
                     <nav class="footer__nav footer-nav">
@@ -796,18 +793,23 @@
                 </a>
             </div>
         </footer>
-        <div class="button__top">
-            <a href="#" class="top__link" data-aos="top-button" data-aos-anchor="#about" data-aos-anchor-placement="top-top">
-                <img src="./img/button-top.png" alt="トップへ戻る">
+
+        <!-- トップへ戻るボタン -->
+            <a href="#" class="top__link">
+                <div class="btn__top-icon">
+                    <img src="./img/button-top.svg" alt="トップへ戻る">
+                </div>
             </a>
-        </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/aos.js"></script>
     <script>
-    AOS.init();
+    AOS.init({
+        duration: 1200,
+        easing: "ease-out",
+    });
     </script>
 </body>
 </html>

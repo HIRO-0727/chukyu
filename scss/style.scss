@@ -2,7 +2,9 @@ $color-main: #4D9600;
 $color-text: #000;
 $color-border: #55A500;
 $color-background: rgba(#4d9600, 0.1);
+$contact-background: rgba(#4d9600, 0.15);
 $color-modal-bg: rgba(#000, 0.502);
+$modal-duration: 0.4s;
 
 /*---------------
     base
@@ -19,9 +21,9 @@ html {
 }
 
 body {
-    font-family: "Yu Mincho", "YuMincho", serif;
+    font-family: "Yu Mincho", "YuMincho", "Noto Serif JP", serif;
     font-optical-sizing: auto;
-    font-weight: 400;
+    font-weight: 500;
     color: $color-text;
     font-size: 1.6rem;
     font-style: normal;
@@ -59,7 +61,7 @@ common
   }
 }
 
-@media (min-width: 961px) {
+@media (min-width: 768px) {
 .hamburger {
    display: none !important;
   }
@@ -94,23 +96,20 @@ img {
     text-align: center;
 }
 
-.section__title {
-    h2 {
-        text-indent: 0.3em;
-    }
+.section__title-en {
+    display: block;
+    text-indent: 0.3em;
 }
 
 .sub-title {
+    display: block;
     font-size: 2rem;
     line-height: calc(33 / 20);
     color: $color-text;
     letter-spacing: 0.3em;
+    text-indent: 0.3rem;
     margin-top: 0.6rem;
 
-}
-
-.sub-title p {
-    text-indent: 0.3rem;
 }
 
 .colored-section {
@@ -119,32 +118,30 @@ img {
 
 // トップへ戻るボタン
 .top__link {
+    width: 6.8rem;
+    height: 6.8rem;
     position: fixed;
-    right: 2rem;
     bottom: 6rem;
-    
+    right: 6rem;
+    z-index: 999;
     opacity: 0;
     visibility: hidden;
-    pointer-events: none;
-
-    transition: opacity 0.4s;
-
-    &[data-aos="top-button"].aos-animate {
+    transition: all 0.4s;
+    @media (max-width: 767px) {
+        width: 5rem;
+        height: 5rem;
+        right: 2rem;
+    }
+    &.active {
         opacity: 1;
         visibility: visible;
-        pointer-events: auto;
-
-        @media (min-width: 768px) {
-            &:hover {
-                opacity: 0.7;
-            }
-        }
     }
+}
 
-     img {
-        width: 5rem;
-        height: auto;
-    }
+// fade-upの距離調整
+
+[data-aos="fade-up"] {
+    transform: translate3d(0, 30px, 0);
 }
 
 
@@ -184,7 +181,12 @@ header
         color: #fff;
         transition: opacity 0.4s;
 
+        @media (max-width: 930px) {
+            font-size: 1.8rem;
+        }
+
         @media (max-width: 767px) {
+            font-size: 2rem;
             line-height: calc(33 / 20);
             height: 5rem;
         }
@@ -200,7 +202,10 @@ header
 .header__nav ul {
     display: flex;
     align-items: center;
-    column-gap: 3.08rem;
+    column-gap: 2.9rem;
+    @media (max-width: 930px) {
+        column-gap: 1.5rem;
+    }
     li a {
         height: 8rem;
         display: flex;
@@ -208,12 +213,9 @@ header
         line-height: calc(18 / 18);
         font-size: 1.8rem;
         color: #fff;
-        transition: opacity 0.4s;
 
-        @media (min-width: 768px)  {
-            &:hover {
-                opacity: 0.7;
-            }
+        @media (max-width: 930px) {
+            font-size: 1.6rem;
         }
     }
 }
@@ -307,38 +309,30 @@ ABOUTまでスクロールしたら背景塗りつぶし
 /*---------------
 ナビゲーション中身
 ---------------*/
-@media (max-width: 960px) {
+@media (max-width: 767px) {
     .header-menu {
         position: fixed;
         width: 30rem;
         height: auto;
-        padding: 1.2rem 0 1.3rem 2rem;
         background: $color-main;
-        top: 8rem;
+        top: 5rem;
         right: 0;
         transform: translate(100%);
-        
         transition: all 0.4s;
 
-        @media (max-width: 767px) {
-            top: 5rem;
-        }
-        
         ul {
-            display: block;
+            display: flex;
             margin: 0;
-            
-            text-align: center;
-            font-size: 1.8rem;
-            li a {
-                    height: auto;
-                    line-height: calc(33 / 18);
-                }
+            flex-direction: column;
+            align-items: stretch;
 
-            li:not(:last-of-type) {
-                margin-bottom: 2.5rem;
-                
-            }
+            li a {
+                    width: 100%;
+                    height: 5.8rem;
+                    padding-left: 2rem;
+                    line-height: calc(33 / 18);
+                    font-size: 1.8rem;
+                }
         }
 
     }
@@ -418,11 +412,11 @@ MVセクション
 .mv__catch {
     width: 100%;
     padding-top: calc(17 / 1080 *100vw);
-    padding-left: calc(15 / 1080 * 100vw); 
+    padding-left: 4rem;
 
     @media (max-width: 767px) {
         padding-top: calc(13 / 375 *100vw);
-        padding-left: calc(10 / 375 * 100vw);
+        padding-left: 3rem;
     }
 
     h2 {
@@ -463,12 +457,10 @@ ABOUTセクション
     position: absolute;
     top: 0;
     left: 0;
-    padding: {
-        top: calc(109 / 1080 * 100vw);
-        right: calc(438 / 1080 * 100vw);
-    }
+    padding-right: calc(438 / 1080 * 100vw);
     display: flex;
     flex-direction: row-reverse;
+    align-items: center;
     z-index: 100;
 
     @media (max-width: 767px) {
@@ -491,11 +483,12 @@ ABOUTセクション
 
     h2 {
         font-size: 3rem;
-        letter-spacing: 0.5rem;
+        letter-spacing: 0.18em;
         line-height: 1;
 
         @media (max-width: 960px) {
-            font-size: 2.5rem;
+            font-size: 2.5rem; 
+            letter-spacing: 0.2em;
         }
 
     }
@@ -528,8 +521,8 @@ SERVICEセクション
     position: relative;
     padding-inline: 3rem;
     padding: {
-        top: calc(80 / 1080 * 100vw);
-        bottom: calc(68 / 1080 * 100vw);
+        top: 8rem;
+        bottom: 6.8rem;
     } 
     @media (max-width: 767px) {
         padding: {
@@ -570,10 +563,16 @@ SERVICEセクション
     height: auto;
     flex-shrink: 0;
     position: relative;
+    padding-bottom: 5.1rem;
+
+    &--3 {
+        padding-bottom: 6.3rem;
+    }
 
     @media (max-width: 767px) {
         width: 100%;
         height: auto;
+        padding-bottom: 0;
     }
 }
 
@@ -590,20 +589,10 @@ SERVICEセクション
 }
 
 .pic-title {
-    padding: {
-        top: 1.9rem;
-        bottom: 5.1rem;
-    }
-
-    &--3 {
-        padding-bottom: 6.3rem;
-    }
+    margin-top: 1.9rem;
 
     @media (max-width: 767px) {
-        padding: {
-            top: 0.5rem;
-            bottom: 0;
-        }
+        margin-top: 0.5rem;
     }
     p {
         font-size: 1.6rem;
@@ -623,7 +612,6 @@ SERVICEセクション
 .service__textarea {
     width: calc(500 / 920 * 100%);
     height: auto;
-    aspect-ratio: 500 / 250;
     flex-shrink: 0;
     background: $color-main;
 
@@ -638,6 +626,10 @@ SERVICEセクション
         font-weight: 600;
         line-height: calc(33 / 25);
         color: #fff;
+
+        @media (max-width: 930px) {
+            font-size: 2rem;
+        }
     }
 
     @media (max-width: 767px) {
@@ -652,6 +644,10 @@ SERVICEセクション
         font-weight: 600;
         line-height: calc(25 / 16);
         color: #fff;
+
+        @media (max-width: 930px) {
+            font-size: 1.4rem;
+        }
     }
 
     &--1 {
@@ -665,7 +661,7 @@ SERVICEセクション
         }
 
         @media (max-width: 930px) {
-            padding-left: calc(150 / 768 * 100vw);
+            padding-left: calc(165 / 768 * 100vw);
         }
 
         h3 {
@@ -691,12 +687,12 @@ SERVICEセクション
         padding: {
             top: calc(38 / 920 * 100%);
             right: calc(27 / 920 *100%);
-            bottom: calc(42 / 920 * 100%);
+            bottom: calc(54 / 920 * 100%);
             left: calc(238 / 920 * 100%);
         }
         
         @media (max-width: 930px) {
-            padding-left: calc(150 / 768 * 100vw);
+            padding-left: calc(165 / 768 * 100vw);
             padding-right: 1rem;
         }
     }
@@ -719,6 +715,7 @@ SERVICEセクション
             }
 
             p {
+                font-size: 1.6rem;
                 margin-top: calc(14 / 375 * 100vw);
             }
     }
@@ -731,8 +728,8 @@ WORKSセクション
     position: relative;
     padding-inline: 3rem;
     padding: {
-        top: calc(80 / 1080 * 100vw);
-        bottom: calc(97 / 1080 * 100vw);
+        top: 8rem;
+        bottom: 9.7rem;
     } 
     @media (max-width: 767px) {
         padding: {
@@ -744,12 +741,13 @@ WORKSセクション
 
 .works__contents {
     margin-top: 6.8rem;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     column-gap: calc(40 / 920 * 100%);
 
     @media (max-width: 767px) {
         margin-top: 3.8rem;
+        display: flex;
         flex-direction: column;
         justify-content: flex-start;
         row-gap: 2.2rem;
@@ -794,54 +792,59 @@ WORKSセクション
 WORKS モーダル
 ---------------*/
 .works__modal[open] {
+    position: fixed;
+    inset: 0;
+    margin: auto;
     border: 0;
     padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+    opacity: 0;
+    transition: opacity $modal-duration ease;
+}
+
+.works__modal[open].is-visible {
+    opacity: 1;
 }
 
 .works__modal::backdrop {
+    background-color: rgba(#000, 0);
+    transition: background-color 0.4s ease;
+    
+}
+
+.works__modal.is-visible::backdrop {
     background: $color-modal-bg;
 }
 
 .modal__contents {
-    position: relative;
     display: none;
-    flex-direction: column;
-    width: calc(450 / 1080 * 100vw);
-    height: auto;
-    aspect-ratio: 450 / 275;
+    width: 45rem;
+    padding-top: 1.5rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
     background: #fff;
 
     @media (max-width: 767px) {
         width: calc(100vw - 6rem);
         max-width: 45rem;
-        aspect-ratio: 315 / 210;
+        padding-top: 2rem;
+        padding-right: 2.05rem;
+        padding-left: 2.05rem;
     }
 }
 
 .modal__contents.is-active {
-    display: flex;
+    display: block;
 }
 
-.modal-header {
+.modal-cancel {
     position: absolute;
     top: 0;
     right: 0;
-    width: 100%;
-    height: 2.5rem;
-    z-index: 1;
-}
-
-// モーダルキャンセル Xボタン
-.modal-cancel {
-    position: relative;
-    display: block;
+    z-index: 2;
     width: 2.5rem;
     height: 2.5rem;
-    margin-left: auto;
-    caret-color: transparent;
+    margin: 0;
 
     // Xボタン
     span {
@@ -864,41 +867,25 @@ WORKS モーダル
     }
 }
 
-.modal-pic {
-    width: calc(420 / 450 * 100%);
-    height: auto;
+.modal__image {
+    // display: block;
+    width: 100%;
     aspect-ratio: 420 / 220;
-    margin: {
-        top: calc(15 / 450 * 100%);
-        inline: auto;
-    }
+
     img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
-
-    @media (max-width: 767px) {
-        width: calc(100% - 4rem);
-        margin: {
-            top: 2rem;
-            right:2rem;
-            left:2rem;
-        }
-    }
 }
 
-.modal-desc {
-    margin: {
-        top: calc(9 / 450 * 100%);
-        left: calc(15 / 450 * 100%);
-    }
+.modal__caption {
+    margin-top: 0.9rem;
+    padding-bottom: 0.6rem;
 
     @media (max-width: 767px) {
-        margin: {
-            top: 0.7rem;
-            left: 2rem;
-        }
+        margin-top: 0.7rem;
+        padding-bottom: 1.4rem;
     }
 }
 
@@ -950,17 +937,16 @@ NEWS お知らせセクション
     }
 }
 
-.news__list {
-    li {
-        background: #fff;
+.news__body {
+    padding: 0 2rem 3.1rem 2rem;
+    background: #fff;
+}
 
-        &::after {
-            content: "";
-            display: block;
-            height: 0.1rem;
-            margin-inline: 2rem;
-            background-color: $color-border;
-        }
+.news__list {
+    background: #fff;
+
+    li {
+        border-bottom: 0.1rem solid $color-border;
     }
 }
 
@@ -972,8 +958,6 @@ NEWS お知らせセクション
     column-gap: calc(65 / 390 * 100%);
     padding-top: 2.3rem;
     padding-bottom: 1.2rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
     transition: opacity 0.4s;
 
     &--2 {
@@ -1018,11 +1002,7 @@ NEWS お知らせセクション
 
 .news__footer {
     position: relative;
-    padding: {
-        top: 2.3rem;
-        right: 2rem;
-        bottom: 3.1rem;
-    }
+    padding-top: 2.3rem;
     background: #fff;
 }
 
@@ -1052,14 +1032,11 @@ NEWS お知らせセクション
 
 .news__footer-icon {
     position: absolute;
-    width: 8rem;
+    width: 8.2rem;
     height: auto;
-    right: -0.26rem;
+    right: -0.2rem;
     bottom: -1.1rem;
 
-    img {
-        aspect-ratio: 80 / 18;
-    }
 }
 
 /*---------------
@@ -1091,40 +1068,30 @@ COMPANY 会社概要
     }
 }
 
-.company__info {
-    width: calc(500 /  920 * 100%);
-    height: auto;
-    aspect-ratio: 500 / 262;
-    flex-shrink: 0;
-    background: $color-main;
-    margin-left: calc(-180 / 920 * 100%);
-
-    @media (max-width: 850px) {
-        margin-left: calc(-140 / 920 * 100%);
-    }
-
-    @media (max-width: 767px) {
-        width: 100%;
-        height: 20.2rem;
-        aspect-ratio: auto;
-        margin-left: 0;
-    }
-}
-
-.company-textarea {
-    padding-top: calc(49 / 500 * 100%);
+.company__textarea {
+    width: calc(500 / 920 * 100%); 
+    flex-shrink: 0; 
+    margin-left: calc(-180 / 920 * 100%); 
+    padding-top: calc(49 / 920 * 100%); 
     padding-right: 2rem;
-    padding-left: calc(220 / 500 * 100%);
+    padding-bottom: 4.2rem; 
+    padding-left: calc(220 / 920 * 100%); 
     color: #fff;
+    background: $color-main; 
 
     @media (max-width: 850px) {
-        padding-top: calc(36 / 500 * 100%);
-        padding-left: calc(180 / 500 * 100%);
+        margin-left: calc(-140 / 920 * 100%); 
+        padding-top: calc(36 / 920 * 100%); 
+        padding-left: calc(180 / 920 * 100%);
     }
 
     @media (max-width: 767px) {
+        width: 100%; 
+        min-height: 20.2rem; 
+        margin-left: 0; 
         padding-top: 1.9rem;
         padding-right: 0;
+        padding-bottom: 1.2rem; 
         padding-left: 2rem;
     }
 }
@@ -1186,6 +1153,10 @@ COMPANY 会社概要
     font-size: 2.5rem;
     font-weight: 600;
     line-height: calc(25 / 25);
+
+    @media (min-width: 768px) {
+        pointer-events: none;
+    }
 }
 
 .mail {
@@ -1209,6 +1180,7 @@ CONTACT お問い合わせ
 ---------------*/
 .contact {
     padding: 8rem 3rem 8rem;
+    background: $contact-background;
 
     @media (max-width: 767px) {
         padding: 5rem 3rem;
@@ -1438,7 +1410,7 @@ input[type="radio"]:checked::before {
         width: 100%;
         resize: none;
         font-size: 1.8rem;
-        line-height: calc(25 / 18);
+        line-height: calc(30 / 18);
 
         @media (max-width: 767px) {
             font-size: 1.6rem;
@@ -1470,7 +1442,7 @@ input[type="radio"]:checked::before {
         line-height: calc(31 / 18);
 
         .mokuteki h3 {
-            margin-top: 3.8rem;
+            margin-top: 4rem;
 
         }
         
@@ -1564,7 +1536,7 @@ input[type="radio"]:checked::before {
 /* 選択肢文字列 */
 .form__checkbox-item label {
     position: relative;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     min-height: 2rem;
     padding-left: 4rem;
@@ -1659,20 +1631,17 @@ input[type="submit"] {
 .company__name {
     font-size: 2rem;
     line-height: calc(33 / 20);
-    margin-bottom: 2.8rem;
     text-align: center;
 
-    @media (max-width: 767px) {
-        margin-bottom: 2rem;
-    }
 }
 
 .footer-nav__lists {
     display: flex;
     flex-wrap: wrap;
-    column-gap: 5rem;
+    column-gap: 4.8rem;
     justify-content: space-between;
-    padding: 2.8rem 0.6rem 2.6rem 0.6rem;
+    padding: 2.8rem 0.6rem 0 0.6rem;
+    margin-top: 2.8rem;
 
     font-size: 1.8rem;
     line-height: calc(33 / 18);
@@ -1681,13 +1650,14 @@ input[type="submit"] {
 
     @media (max-width: 930px) {
         column-gap: 2rem;
+        margin-top: 2rem;
     }
 
     @media (max-width: 767px) {
         justify-content: center;
         row-gap: 0.5rem;
-        padding: 2rem 0.5rem 2.8rem 0.5rem;
-        column-gap: 3rem;
+        padding: 2rem 0.5rem 0 0.5rem;
+        column-gap: 2.8rem;
     }
 }
 
@@ -1706,6 +1676,7 @@ input[type="submit"] {
     align-items: center;
     justify-content: center;
     column-gap: 3rem;
+    margin-top: 2.6rem;
 }
 
 .sns__link {
