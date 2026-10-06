@@ -884,6 +884,7 @@ WORKS モーダル
   padding-top: 1.5rem;
   padding-right: 1.5rem;
   padding-left: 1.5rem;
+  padding-bottom: 0.6rem;
   background: #fff;
 }
 @media (max-width: 767px) {
@@ -893,6 +894,7 @@ WORKS モーダル
     padding-top: 2rem;
     padding-right: 2.05rem;
     padding-left: 2.05rem;
+    padding-bottom: 1.4rem;
   }
 }
 
@@ -942,12 +944,10 @@ WORKS モーダル
 
 .modal__caption {
   margin-top: 0.9rem;
-  padding-bottom: 0.6rem;
 }
 @media (max-width: 767px) {
   .modal__caption {
     margin-top: 0.7rem;
-    padding-bottom: 1.4rem;
   }
 }
 
