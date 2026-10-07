@@ -917,7 +917,6 @@ WORKS モーダル
 @media (max-width: 767px) {
   .modal__contents {
     width: calc(100vw - 6rem);
-    max-width: 45rem;
     padding-top: 2rem;
     padding-right: 2.05rem;
     padding-left: 2.05rem;
@@ -1042,7 +1041,7 @@ NEWS お知らせセクション
 }
 
 .news__body {
-  padding: 0 2rem 3.1rem 2rem;
+  padding: 1rem 2rem 3.1rem 2rem;
   background: #fff;
 }
 
@@ -1059,13 +1058,10 @@ NEWS お知らせセクション
   -webkit-column-gap: 16.6666666667%;
      -moz-column-gap: 16.6666666667%;
           column-gap: 16.6666666667%;
-  padding-top: 2.3rem;
+  padding-top: 1.3rem;
   padding-bottom: 1.2rem;
   -webkit-transition: opacity 0.4s;
   transition: opacity 0.4s;
-}
-.news__link--2 {
-  padding-top: 1.3rem;
 }
 .news__link:hover {
   opacity: 0.7;
@@ -1105,7 +1101,7 @@ NEWS お知らせセクション
 
 .news__footer {
   position: relative;
-  padding-top: 2.3rem;
+  margin-top: 2.3rem;
   background: #fff;
 }
 
@@ -1180,7 +1176,7 @@ COMPANY 会社概要
   -ms-flex-negative: 0;
       flex-shrink: 0;
   margin-left: -19.5652173913%;
-  padding-top: 5.3260869565%;
+  padding-top: 4.9rem;
   padding-right: 2rem;
   padding-bottom: 4.2rem;
   padding-left: 23.9130434783%;
@@ -1190,7 +1186,7 @@ COMPANY 会社概要
 @media (max-width: 850px) {
   .company__textarea {
     margin-left: -15.2173913043%;
-    padding-top: 3.9130434783%;
+    padding-top: 3.6rem;
     padding-left: 19.5652173913%;
   }
 }
@@ -1803,6 +1799,13 @@ input[type=submit] {
   font-size: 2rem;
   line-height: 1.65;
   text-align: center;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+@media (min-width: 768px) {
+  .company__name:hover {
+    opacity: 0.7;
+  }
 }
 
 .footer__nav {
