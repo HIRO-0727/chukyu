@@ -1306,12 +1306,8 @@ CONTACT お問い合わせ
 
 .contact__contents {
   margin-top: 3.5rem;
-  padding-inline: 6.5217391304%;
-}
-@media (max-width: 767px) {
-  .contact__contents {
-    padding-inline: 0;
-  }
+  max-width: 80rem;
+  margin-inline: auto;
 }
 
 .contact__desc {
@@ -1335,6 +1331,15 @@ CONTACT お問い合わせ
 @media (max-width: 767px) {
   .form__items--1 {
     row-gap: 3rem;
+  }
+}
+
+.form__items--2 {
+  margin-top: 5.2rem;
+}
+@media (max-width: 767px) {
+  .form__items--2 {
+    margin-top: 3.2rem;
   }
 }
 
@@ -1404,9 +1409,6 @@ CONTACT お問い合わせ
 .form__label--1, .form__label--3 {
   width: 15.1rem;
 }
-.form__label--4 {
-  margin-top: 5.2rem;
-}
 @media (max-width: 767px) {
   .form__label--1 {
     padding-top: 0;
@@ -1418,9 +1420,6 @@ CONTACT お問い合わせ
   .form__label--3 {
     padding-top: 0;
     width: 5rem;
-  }
-  .form__label--4 {
-    margin-top: 3.2rem;
   }
 }
 
