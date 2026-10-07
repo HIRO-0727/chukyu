@@ -18,6 +18,10 @@ html {
     font-size: 10px;
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+
+    @media (max-width: 767px) {
+        scroll-padding-top: 50px;
+    }
 }
 
 body {
@@ -126,7 +130,7 @@ img {
     z-index: 999;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.4s;
+    transition: opacity 0.4s, visibility 0.4s;
     @media (max-width: 767px) {
         width: 5rem;
         height: 5rem;
@@ -135,6 +139,12 @@ img {
     &.active {
         opacity: 1;
         visibility: visible;
+    }
+
+    &:hover {
+        @media (min-width: 768px) {
+            opacity: 0.4s;
+        }
     }
 }
 
@@ -230,7 +240,7 @@ header
         li a::after {
             background-color: #fff;
             content: "";
-            height: 0.2rem;
+            height: 0.1rem;
             left: 0;
             position: absolute;
 
@@ -294,7 +304,7 @@ ABOUTまでスクロールしたら背景塗りつぶし
             height: 0.4rem;
             background: $color-main;
             border-radius: 0.2rem;
-            transition: all 0.4s;
+            transition: top 0.4s, transform 0.4s;
 
             &:nth-of-type(1) {
                 top:25%;
@@ -318,7 +328,7 @@ ABOUTまでスクロールしたら背景塗りつぶし
         top: 5rem;
         right: 0;
         transform: translate(100%);
-        transition: all 0.4s;
+        transition: transform 0.4s;
 
         ul {
             display: flex;
@@ -467,6 +477,7 @@ ABOUTセクション
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         padding: {
             top: 5rem;
             bottom: 5rem;
@@ -1637,28 +1648,48 @@ input[type="submit"] {
 
 }
 
+// フッター内のでのナビの配置
+.footer__nav {
+    margin-top: 2.8rem;
+
+    @media (max-width: 930px) {
+        margin-top: 2rem;
+    }
+}
+
+//ナビ本体の余白・ボーダー
+.footer-nav {
+    padding-top: 2.8rem;
+    border-top: 0.1rem solid #000;
+
+    @media (max-width: 767px) {
+        padding-top: 2rem;
+    }
+}
+
+//ナビリストのレイアウト
 .footer-nav__lists {
     display: flex;
     flex-wrap: wrap;
     column-gap: 4.8rem;
     justify-content: space-between;
-    padding: 2.8rem 0.6rem 0 0.6rem;
-    margin-top: 2.8rem;
+    padding-inline: 0.6rem;
+    // margin-top: 2.8rem;
 
     font-size: 1.8rem;
     line-height: calc(33 / 18);
 
-    border-top: 0.1rem solid #000;
+    // border-top: 0.1rem solid #000;
 
     @media (max-width: 930px) {
         column-gap: 2rem;
-        margin-top: 2rem;
+        // margin-top: 2rem;
     }
 
     @media (max-width: 767px) {
         justify-content: center;
         row-gap: 0.5rem;
-        padding: 2rem 0.5rem 0 0.5rem;
+        padding-inline: 0.5rem;
         column-gap: 2.8rem;
     }
 }
@@ -1673,12 +1704,18 @@ input[type="submit"] {
     }
 }
 
+// フッター内でのSNSの位置
+.footer__sns {
+    margin-top: 2.6rem;
+}
+
+// SNS本体のレイアウト
 .sns {
     display: flex;
     align-items: center;
     justify-content: center;
     column-gap: 3rem;
-    margin-top: 2.6rem;
+    // margin-top: 2.6rem;
 }
 
 .sns__link {
