@@ -12,6 +12,11 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
 }
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: 50px;
+  }
+}
 
 body {
   font-family: "Yu Mincho", "YuMincho", "Noto Serif JP", serif;
@@ -113,8 +118,8 @@ img {
   z-index: 999;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
+  -webkit-transition: opacity 0.4s, visibility 0.4s;
+  transition: opacity 0.4s, visibility 0.4s;
 }
 @media (max-width: 767px) {
   .top__link {
@@ -126,6 +131,11 @@ img {
 .top__link.active {
   opacity: 1;
   visibility: visible;
+}
+@media (min-width: 768px) {
+  .top__link:hover {
+    opacity: 0.7;
+  }
 }
 
 [data-aos=fade-up] {
@@ -243,7 +253,7 @@ header
   .header__nav ul li a::after {
     background-color: #fff;
     content: "";
-    height: 0.2rem;
+    height: 0.1rem;
     left: 0;
     position: absolute;
     top: calc(50% + 0.9rem + 0.4rem);
@@ -307,8 +317,10 @@ ABOUTまでスクロールしたら背景塗りつぶし
   height: 0.4rem;
   background: #4D9600;
   border-radius: 0.2rem;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
+  -webkit-transition: top 0.4s, -webkit-transform 0.4s;
+  transition: top 0.4s, -webkit-transform 0.4s;
+  transition: top 0.4s, transform 0.4s;
+  transition: top 0.4s, transform 0.4s, -webkit-transform 0.4s;
 }
 .hamburger span:nth-of-type(1) {
   top: 25%;
@@ -330,8 +342,10 @@ ABOUTまでスクロールしたら背景塗りつぶし
     right: 0;
     -webkit-transform: translate(100%);
             transform: translate(100%);
-    -webkit-transition: all 0.4s;
-    transition: all 0.4s;
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+    transition: transform 0.4s, -webkit-transform 0.4s;
   }
   .header-menu ul {
     display: -webkit-box;
@@ -513,6 +527,9 @@ ABOUTセクション
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     padding-top: 5rem;
     padding-bottom: 5rem;
     padding-right: 0;
@@ -696,7 +713,7 @@ SERVICEセクション
   }
 }
 .service__textarea p {
-  margin-top: 1.5740740741vw;
+  margin-top: 1.7rem;
   font-size: 1.6rem;
   font-weight: 600;
   line-height: 1.5625;
@@ -709,14 +726,19 @@ SERVICEセクション
 }
 .service__textarea--1 {
   margin-left: -19.5652173913%;
-  padding-top: 5.4347826087%;
+  padding-top: 5rem;
   padding-right: 2.9347826087%;
-  padding-bottom: 4.5652173913%;
+  padding-bottom: 4.2rem;
   padding-left: 26.9565217391%;
 }
 @media (max-width: 930px) {
   .service__textarea--1 {
-    padding-left: 21.484375vw;
+    padding-left: 20rem;
+  }
+}
+@media (max-width: 820px) {
+  .service__textarea--1 {
+    padding-left: 17rem;
   }
 }
 @media (max-width: 930px) {
@@ -727,22 +749,27 @@ SERVICEセクション
 }
 .service__textarea--2 {
   margin-right: -19.5652173913%;
-  padding-top: 5.4347826087%;
+  padding-top: 5rem;
   padding-right: 20.1086956522%;
-  padding-bottom: 4.5652173913%;
+  padding-bottom: 4.2rem;
   padding-left: 4.347826087%;
 }
 .service__textarea--3 {
   margin-left: -19.5652173913%;
-  padding-top: 4.1304347826%;
+  padding-top: 3.8rem;
   padding-right: 2.9347826087%;
-  padding-bottom: 5.8695652174%;
+  padding-bottom: 5.4rem;
   padding-left: 25.8695652174%;
 }
 @media (max-width: 930px) {
   .service__textarea--3 {
-    padding-left: 21.484375vw;
+    padding-left: 20rem;
     padding-right: 1rem;
+  }
+}
+@media (max-width: 820px) {
+  .service__textarea--3 {
+    padding-left: 17rem;
   }
 }
 @media (max-width: 767px) {
@@ -751,10 +778,10 @@ SERVICEセクション
     height: auto;
     aspect-ratio: auto;
     margin: 0;
-    padding-top: 5.3333333333vw;
-    padding-left: 5.3333333333vw;
-    padding-right: 5.3333333333vw;
-    padding-bottom: 3.2vw;
+    padding-top: 2rem;
+    padding-left: 6.3492063492%;
+    padding-right: 6.3492063492%;
+    padding-bottom: 1.2rem;
   }
   .service__textarea h3 {
     font-size: 2rem;
@@ -762,7 +789,7 @@ SERVICEセクション
   }
   .service__textarea p {
     font-size: 1.6rem;
-    margin-top: 3.7333333333vw;
+    margin-top: 1.4rem;
   }
 }
 
@@ -884,15 +911,16 @@ WORKS モーダル
   padding-top: 1.5rem;
   padding-right: 1.5rem;
   padding-left: 1.5rem;
+  padding-bottom: 0.6rem;
   background: #fff;
 }
 @media (max-width: 767px) {
   .modal__contents {
     width: calc(100vw - 6rem);
-    max-width: 45rem;
     padding-top: 2rem;
     padding-right: 2.05rem;
     padding-left: 2.05rem;
+    padding-bottom: 1.4rem;
   }
 }
 
@@ -942,12 +970,10 @@ WORKS モーダル
 
 .modal__caption {
   margin-top: 0.9rem;
-  padding-bottom: 0.6rem;
 }
 @media (max-width: 767px) {
   .modal__caption {
     margin-top: 0.7rem;
-    padding-bottom: 1.4rem;
   }
 }
 
@@ -1015,7 +1041,7 @@ NEWS お知らせセクション
 }
 
 .news__body {
-  padding: 0 2rem 3.1rem 2rem;
+  padding: 1rem 2rem 3.1rem 2rem;
   background: #fff;
 }
 
@@ -1032,13 +1058,10 @@ NEWS お知らせセクション
   -webkit-column-gap: 16.6666666667%;
      -moz-column-gap: 16.6666666667%;
           column-gap: 16.6666666667%;
-  padding-top: 2.3rem;
+  padding-top: 1.3rem;
   padding-bottom: 1.2rem;
   -webkit-transition: opacity 0.4s;
   transition: opacity 0.4s;
-}
-.news__link--2 {
-  padding-top: 1.3rem;
 }
 .news__link:hover {
   opacity: 0.7;
@@ -1078,7 +1101,7 @@ NEWS お知らせセクション
 
 .news__footer {
   position: relative;
-  padding-top: 2.3rem;
+  margin-top: 2.3rem;
   background: #fff;
 }
 
@@ -1153,7 +1176,7 @@ COMPANY 会社概要
   -ms-flex-negative: 0;
       flex-shrink: 0;
   margin-left: -19.5652173913%;
-  padding-top: 5.3260869565%;
+  padding-top: 4.9rem;
   padding-right: 2rem;
   padding-bottom: 4.2rem;
   padding-left: 23.9130434783%;
@@ -1163,7 +1186,7 @@ COMPANY 会社概要
 @media (max-width: 850px) {
   .company__textarea {
     margin-left: -15.2173913043%;
-    padding-top: 3.9130434783%;
+    padding-top: 3.6rem;
     padding-left: 19.5652173913%;
   }
 }
@@ -1283,12 +1306,8 @@ CONTACT お問い合わせ
 
 .contact__contents {
   margin-top: 3.5rem;
-  padding-inline: 6.5217391304%;
-}
-@media (max-width: 767px) {
-  .contact__contents {
-    padding-inline: 0;
-  }
+  max-width: 80rem;
+  margin-inline: auto;
 }
 
 .contact__desc {
@@ -1312,6 +1331,15 @@ CONTACT お問い合わせ
 @media (max-width: 767px) {
   .form__items--1 {
     row-gap: 3rem;
+  }
+}
+
+.form__items--2 {
+  margin-top: 5.2rem;
+}
+@media (max-width: 767px) {
+  .form__items--2 {
+    margin-top: 3.2rem;
   }
 }
 
@@ -1381,9 +1409,6 @@ CONTACT お問い合わせ
 .form__label--1, .form__label--3 {
   width: 15.1rem;
 }
-.form__label--4 {
-  margin-top: 5.2rem;
-}
 @media (max-width: 767px) {
   .form__label--1 {
     padding-top: 0;
@@ -1395,9 +1420,6 @@ CONTACT お問い合わせ
   .form__label--3 {
     padding-top: 0;
     width: 5rem;
-  }
-  .form__label--4 {
-    margin-top: 3.2rem;
   }
 }
 
@@ -1776,6 +1798,32 @@ input[type=submit] {
   font-size: 2rem;
   line-height: 1.65;
   text-align: center;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+@media (min-width: 768px) {
+  .company__name:hover {
+    opacity: 0.7;
+  }
+}
+
+.footer__nav {
+  margin-top: 2.8rem;
+}
+@media (max-width: 930px) {
+  .footer__nav {
+    margin-top: 2rem;
+  }
+}
+
+.footer-nav {
+  padding-top: 2.8rem;
+  border-top: 0.1rem solid #000;
+}
+@media (max-width: 767px) {
+  .footer-nav {
+    padding-top: 2rem;
+  }
 }
 
 .footer-nav__lists {
@@ -1790,18 +1838,15 @@ input[type=submit] {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 2.8rem 0.6rem 0 0.6rem;
-  margin-top: 2.8rem;
+  padding-inline: 0.6rem;
   font-size: 1.8rem;
   line-height: 1.8333333333;
-  border-top: 0.1rem solid #000;
 }
 @media (max-width: 930px) {
   .footer-nav__lists {
     -webkit-column-gap: 2rem;
        -moz-column-gap: 2rem;
             column-gap: 2rem;
-    margin-top: 2rem;
   }
 }
 @media (max-width: 767px) {
@@ -1810,7 +1855,7 @@ input[type=submit] {
         -ms-flex-pack: center;
             justify-content: center;
     row-gap: 0.5rem;
-    padding: 2rem 0.5rem 0 0.5rem;
+    padding-inline: 0.5rem;
     -webkit-column-gap: 2.8rem;
        -moz-column-gap: 2.8rem;
             column-gap: 2.8rem;
@@ -1827,6 +1872,10 @@ input[type=submit] {
     opacity: 0.7;
   }
 }
+.footer__sns {
+  margin-top: 2.6rem;
+}
+
 .sns {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1840,7 +1889,6 @@ input[type=submit] {
   -webkit-column-gap: 3rem;
      -moz-column-gap: 3rem;
           column-gap: 3rem;
-  margin-top: 2.6rem;
 }
 
 .sns__link {

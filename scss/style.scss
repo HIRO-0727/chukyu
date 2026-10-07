@@ -18,6 +18,10 @@ html {
     font-size: 10px;
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+
+    @media (max-width: 767px) {
+        scroll-padding-top: 50px;
+    }
 }
 
 body {
@@ -126,7 +130,7 @@ img {
     z-index: 999;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.4s;
+    transition: opacity 0.4s, visibility 0.4s;
     @media (max-width: 767px) {
         width: 5rem;
         height: 5rem;
@@ -135,6 +139,12 @@ img {
     &.active {
         opacity: 1;
         visibility: visible;
+    }
+
+    &:hover {
+        @media (min-width: 768px) {
+            opacity: 0.7;
+        }
     }
 }
 
@@ -230,7 +240,7 @@ header
         li a::after {
             background-color: #fff;
             content: "";
-            height: 0.2rem;
+            height: 0.1rem;
             left: 0;
             position: absolute;
 
@@ -294,7 +304,7 @@ ABOUTまでスクロールしたら背景塗りつぶし
             height: 0.4rem;
             background: $color-main;
             border-radius: 0.2rem;
-            transition: all 0.4s;
+            transition: top 0.4s, transform 0.4s;
 
             &:nth-of-type(1) {
                 top:25%;
@@ -318,7 +328,7 @@ ABOUTまでスクロールしたら背景塗りつぶし
         top: 5rem;
         right: 0;
         transform: translate(100%);
-        transition: all 0.4s;
+        transition: transform 0.4s;
 
         ul {
             display: flex;
@@ -467,6 +477,7 @@ ABOUTセクション
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         padding: {
             top: 5rem;
             bottom: 5rem;
@@ -639,7 +650,7 @@ SERVICEセクション
         }
     }
     p {
-        margin-top: calc(17 / 1080 * 100vw);
+        margin-top: 1.7rem;
         font-size: 1.6rem;
         font-weight: 600;
         line-height: calc(25 / 16);
@@ -653,15 +664,19 @@ SERVICEセクション
     &--1 {
         margin-left: calc(-180 / 920 * 100%);
         padding: {
-            top: calc(50 / 920 * 100%);
+            top: 5rem;
             right: calc(27 / 920 *100%);
-            bottom: calc(42 / 920 * 100%);
+            bottom: 4.2rem;
             left: calc(248 / 920 * 100%);
             
         }
 
         @media (max-width: 930px) {
-            padding-left: calc(165 / 768 * 100vw);
+            padding-left: 20rem;
+        }
+
+        @media (max-width: 820px) {
+            padding-left: 17rem;
         }
 
         h3 {
@@ -675,9 +690,9 @@ SERVICEセクション
     &--2 {
         margin-right: calc(-180 / 920 * 100%);
         padding: {
-            top: calc(50 / 920 * 100%);
+            top: 5rem;
             right: calc(185 / 920 *100%);
-            bottom: calc(42 / 920 * 100%);
+            bottom: 4.2rem;
             left: calc(40 / 920 * 100%);
         }
     }
@@ -685,15 +700,19 @@ SERVICEセクション
     &--3 {
         margin-left: calc(-180 / 920 * 100%);
         padding: {
-            top: calc(38 / 920 * 100%);
+            top: 3.8rem;
             right: calc(27 / 920 *100%);
-            bottom: calc(54 / 920 * 100%);
+            bottom: 5.4rem;
             left: calc(238 / 920 * 100%);
         }
         
         @media (max-width: 930px) {
-            padding-left: calc(165 / 768 * 100vw);
+            padding-left: 20rem;
             padding-right: 1rem;
+        }
+
+        @media (max-width: 820px) {
+            padding-left: 17rem;
         }
     }
 
@@ -703,10 +722,10 @@ SERVICEセクション
             aspect-ratio: auto;
             margin: 0;
             padding: {
-                top: calc(20 / 375 * 100vw);
-                left: calc(20 / 375 * 100vw);
-                right: calc(20 / 375 * 100vw);
-                bottom: calc(12 / 375 * 100vw);
+                top: 2rem;
+                left: calc(20 / 315 * 100%);
+                right: calc(20 / 315 * 100%);
+                bottom: 1.2rem;
             }
 
             h3 {
@@ -716,7 +735,7 @@ SERVICEセクション
 
             p {
                 font-size: 1.6rem;
-                margin-top: calc(14 / 375 * 100vw);
+                margin-top: 1.4rem;
             }
     }
 }
@@ -822,14 +841,15 @@ WORKS モーダル
     padding-top: 1.5rem;
     padding-right: 1.5rem;
     padding-left: 1.5rem;
+    padding-bottom: 0.6rem;
     background: #fff;
 
     @media (max-width: 767px) {
         width: calc(100vw - 6rem);
-        max-width: 45rem;
         padding-top: 2rem;
         padding-right: 2.05rem;
         padding-left: 2.05rem;
+        padding-bottom: 1.4rem;
     }
 }
 
@@ -868,7 +888,6 @@ WORKS モーダル
 }
 
 .modal__image {
-    // display: block;
     width: 100%;
     aspect-ratio: 420 / 220;
 
@@ -881,11 +900,10 @@ WORKS モーダル
 
 .modal__caption {
     margin-top: 0.9rem;
-    padding-bottom: 0.6rem;
+    // padding-bottom: 0.6rem;
 
     @media (max-width: 767px) {
         margin-top: 0.7rem;
-        padding-bottom: 1.4rem;
     }
 }
 
@@ -938,7 +956,7 @@ NEWS お知らせセクション
 }
 
 .news__body {
-    padding: 0 2rem 3.1rem 2rem;
+    padding: 1rem 2rem 3.1rem 2rem;
     background: #fff;
 }
 
@@ -956,13 +974,9 @@ NEWS お知らせセクション
         5.7rem
         minmax(0, 1fr);
     column-gap: calc(65 / 390 * 100%);
-    padding-top: 2.3rem;
+    padding-top: 1.3rem;
     padding-bottom: 1.2rem;
     transition: opacity 0.4s;
-
-    &--2 {
-        padding-top: 1.3rem;
-    }
 
     &:hover {
         opacity: 0.7;
@@ -1002,7 +1016,7 @@ NEWS お知らせセクション
 
 .news__footer {
     position: relative;
-    padding-top: 2.3rem;
+    margin-top: 2.3rem;
     background: #fff;
 }
 
@@ -1072,7 +1086,7 @@ COMPANY 会社概要
     width: calc(500 / 920 * 100%); 
     flex-shrink: 0; 
     margin-left: calc(-180 / 920 * 100%); 
-    padding-top: calc(49 / 920 * 100%); 
+    padding-top: 4.9rem; 
     padding-right: 2rem;
     padding-bottom: 4.2rem; 
     padding-left: calc(220 / 920 * 100%); 
@@ -1081,7 +1095,7 @@ COMPANY 会社概要
 
     @media (max-width: 850px) {
         margin-left: calc(-140 / 920 * 100%); 
-        padding-top: calc(36 / 920 * 100%); 
+        padding-top: 3.6rem; 
         padding-left: calc(180 / 920 * 100%);
     }
 
@@ -1189,11 +1203,9 @@ CONTACT お問い合わせ
 
 .contact__contents {
     margin-top: 3.5rem;
-    padding-inline: calc(60 / 920 * 100%);
+    max-width: 80rem;
+    margin-inline: auto;
 
-    @media (max-width: 767px) {
-        padding-inline: 0;
-    }
 }
 
 .contact__desc {
@@ -1215,6 +1227,14 @@ CONTACT お問い合わせ
 
     @media (max-width: 767px) {
         row-gap: 3rem;
+    }
+}
+
+.form__items--2 {
+    margin-top: 5.2rem;
+
+    @media (max-width: 767px) {
+        margin-top: 3.2rem;
     }
 }
 
@@ -1268,10 +1288,6 @@ CONTACT お問い合わせ
         width: 15.1rem;
     }
 
-    &--4 {
-        margin-top: 5.2rem;
-    }
-
     @media (max-width: 767px) {
         &--1 {
             padding-top: 0;
@@ -1287,9 +1303,6 @@ CONTACT お問い合わせ
             width: 5rem;
         }
 
-        &--4 {
-            margin-top: 3.2rem;
-        }
     }
 }
 
@@ -1632,31 +1645,55 @@ input[type="submit"] {
     font-size: 2rem;
     line-height: calc(33 / 20);
     text-align: center;
+    transition: opacity 0.4s;
+
+    &:hover {
+        @media (min-width: 768px) {
+            opacity: 0.7;
+        }
+    }
 
 }
 
+// フッター内のでのナビの配置
+.footer__nav {
+    margin-top: 2.8rem;
+
+    @media (max-width: 930px) {
+        margin-top: 2rem;
+    }
+}
+
+//ナビ本体の余白・ボーダー
+.footer-nav {
+    padding-top: 2.8rem;
+    border-top: 0.1rem solid #000;
+
+    @media (max-width: 767px) {
+        padding-top: 2rem;
+    }
+}
+
+//ナビリストのレイアウト
 .footer-nav__lists {
     display: flex;
     flex-wrap: wrap;
     column-gap: 4.8rem;
     justify-content: space-between;
-    padding: 2.8rem 0.6rem 0 0.6rem;
-    margin-top: 2.8rem;
+    padding-inline: 0.6rem;
 
     font-size: 1.8rem;
     line-height: calc(33 / 18);
 
-    border-top: 0.1rem solid #000;
 
     @media (max-width: 930px) {
         column-gap: 2rem;
-        margin-top: 2rem;
     }
 
     @media (max-width: 767px) {
         justify-content: center;
         row-gap: 0.5rem;
-        padding: 2rem 0.5rem 0 0.5rem;
+        padding-inline: 0.5rem;
         column-gap: 2.8rem;
     }
 }
@@ -1671,12 +1708,17 @@ input[type="submit"] {
     }
 }
 
+// フッター内でのSNSの位置
+.footer__sns {
+    margin-top: 2.6rem;
+}
+
+// SNS本体のレイアウト
 .sns {
     display: flex;
     align-items: center;
     justify-content: center;
     column-gap: 3rem;
-    margin-top: 2.6rem;
 }
 
 .sns__link {
